@@ -55,9 +55,9 @@
       <section class="stats" aria-label="Research statistics">
        <div class="stat"><strong>${visibleCollections().length}</strong><span>${html(t('primarySources'))}</span></div><div class="stat"><strong>${visibleCases().length}</strong><span>${html(t('caseCount'))}</span></div><div class="stat"><strong>${visibleTensions().length}</strong><span>${html(t('tensionCount'))}</span></div><div class="stat"><strong>4</strong><span>${html(t('languages'))}</span></div>
       </section>
-      <div class="content-section"><div class="section-titleline"><div><div class="micro-label">01 / ${html(t('pilot'))}</div><h2>${html(t('studiesTitle'))}</h2><p>${html(t('studiesDesc'))}</p></div><a class="text-link" href="#cases">${html(t('viewAll'))} →</a></div><div class="case-grid">${topCards || `<p class="empty">${html(t('sectNoCases'))}</p>`}</div></div>
+      <div class="content-section"><div class="section-titleline"><div><div class="micro-label">${html(t('navCases'))}</div><h2>${html(t('studiesTitle'))}</h2><p>${html(t('studiesDesc'))}</p></div><a class="text-link" href="#cases">${html(t('viewAll'))} →</a></div><div class="case-grid">${topCards || `<p class="empty">${html(t('sectNoCases'))}</p>`}</div></div>
       <div class="lower-grid"><section class="panel timeline-panel"><div class="micro-label">570 — 632 CE</div><h2>${html(t('timelineTitle'))}</h2><p>${html(t('timelineSub'))}</p><div class="timeline">${[['c. 570','birth'],['c. 610','revelation'],['622','hijra'],['632','death']].map(([year,key])=>`<div class="timeline-row"><b dir="ltr">${html(year)}</b><span>${html(t(key))}</span></div>`).join('')}</div></section>
-       <section class="panel tension-panel"><div class="micro-label">CR-001 / ${html(t('unresolved'))}</div><h2>${html(t('tensionTitle'))}</h2><p>${html(t('tensionDesc'))}</p><div class="tension-box"><span class="tension-symbol">≠ ?</span><h3>${html((firstTension ? local(firstTension).title : t('sectNoTensions')))}</h3><p>${html((firstTension ? local(firstTension).summary : t('sectNoCases')))}</p><a class="text-link" href="#tensions">${html(t('openRegister'))} →</a></div></section></div>
+       <section class="panel tension-panel"><div class="micro-label">${html(t('unresolved'))}</div><h2>${html(t('tensionTitle'))}</h2><p>${html(t('tensionDesc'))}</p><div class="tension-box"><span class="tension-symbol">${firstTension ? '≠ ?' : '○'}</span><h3>${html((firstTension ? local(firstTension).title : t('sectNoTensions')))}</h3><p>${html((firstTension ? local(firstTension).summary : t('sectNoTensions')))}</p><a class="text-link" href="#tensions">${html(t('openRegister'))} →</a></div></section></div>
       <aside class="principle"><div class="principle-icon">“</div><div><h3>${html(t('guidelineTitle'))}</h3><p>${html(t('guidelineText'))}</p></div></aside>`;
   }
   function casesPage() {
@@ -76,8 +76,36 @@
       <div class="micro-label source-section-label">02 / ${html(t('bibliography'))}</div><div class="source-list">${db.bibliography.map((item,i)=>`<div class="source-row"><span class="source-index">${String(i+1).padStart(2,'0')}</span><div class="source-info"><h3>${html(item.title)}</h3><small>${html(item.author)} · ${html(item.year)} · ${html(item.publisher)}</small></div>${link(item.url,t('openSource'),'text-link')}</div>`).join('')}</div>`;
   }
   function methodPage() {
-    const stages = [['methodA','methodAD'],['methodB','methodBD'],['methodC','methodCD'],['methodD','methodDD']];
-    return `${sectionHeading('methodEyebrow','methodTitle','methodIntro')}<div class="method-grid">${stages.map(([a,b],i)=>`<div class="method-card"><div class="method-step">${String(i+1).padStart(2,'0')}</div><h2>${html(t(a))}</h2><p>${html(t(b))}</p></div>`).join('')}</div><section class="rule-section"><div class="micro-label">PROTOCOL / 01</div><h2>${html(t('methodologyRules'))}</h2><div class="rules-list">${[1,2,3,4,5,6].map(i=>`<div><span>✓</span><p>${html(t('rule'+i))}</p></div>`).join('')}</div></section>`;
+    const stages = Array.from({length:7}, (_,i)=>i+1);
+    const layers = Array.from({length:4}, (_,i)=>i+1);
+    const tensionSteps = Array.from({length:5}, (_,i)=>i+1);
+    const criteria = Array.from({length:6}, (_,i)=>i+1);
+    const protocolLinks = [
+      ['docs/methodology.md','methodDocMain'],
+      ['docs/chronology-protocol.md','methodDocChron'],
+      ['docs/quantitative-model.md','methodDocQuant'],
+      ['docs/behavioral-profile.md','methodDocProfile']
+    ];
+    const protocolLink = ([path,title])=>link(`https://github.com/religiousnerd/islam/blob/main/${path}`,t(title),'method-resource');
+    return `${sectionHeading('methodEyebrow','methodTitle','methodIntro')}
+      <section class="method-lead"><div class="eyebrow">${html(t('methodLabelLead'))}</div><h2>${html(t('methodLeadTitle'))}</h2><p>${html(t('methodLeadDesc'))}</p></section>
+      <aside class="method-status" role="status"><span class="method-status-mark" aria-hidden="true">○</span><div><strong>${html(t('methodEmptyTitle'))}</strong><p>${html(t('methodEmptyDesc'))}</p></div></aside>
+      <section class="method-block"><div class="method-block-heading"><span class="method-kicker">${html(t('methodLabelWorkflow'))}</span><h2>${html(t('methodWorkflow'))}</h2></div>
+        <div class="method-stages">${stages.map(i=>`<article class="method-stage"><div class="method-stage-num">${String(i).padStart(2,'0')}</div><div><h3>${html(t('methodStage'+i+'Title'))}</h3><p>${html(t('methodStage'+i+'Desc'))}</p></div></article>`).join('')}</div></section>
+      <section class="method-block"><div class="method-block-heading"><span class="method-kicker">${html(t('methodLabelEvidence'))}</span><h2>${html(t('methodEvidenceTitle'))}</h2><p>${html(t('methodEvidenceIntro'))}</p></div>
+        <div class="method-layers">${layers.map(i=>`<article class="method-layer"><div class="method-layer-index">0${i}</div><h3>${html(t('methodLayer'+i+'Title'))}</h3><p>${html(t('methodLayer'+i+'Desc'))}</p></article>`).join('')}</div></section>
+      <section class="method-block"><div class="method-block-heading"><span class="method-kicker">${html(t('methodLabelConflict'))}</span><h2>${html(t('methodConflictTitle'))}</h2><p>${html(t('methodConflictIntro'))}</p></div>
+        <ol class="method-checklist">${tensionSteps.map(i=>`<li>${html(t('methodConflict'+i))}</li>`).join('')}</ol></section>
+      <section class="method-block"><div class="method-block-heading"><span class="method-kicker">${html(t('methodLabelChronology'))}</span><h2>${html(t('methodChronTitle'))}</h2><p>${html(t('methodChronIntro'))}</p></div>
+        <div class="method-chron-grid">${[1,2,3].map(i=>`<article class="method-chron-card"><span>0${i}</span><h3>${html(t('methodChron'+i+'Title'))}</h3><p>${html(t('methodChron'+i+'Desc'))}</p></article>`).join('')}</div></section>
+      <section class="method-block"><div class="method-quant"><span class="method-kicker">${html(t('methodLabelQuantitative'))}</span><h2>${html(t('methodQuantTitle'))}</h2><p>${html(t('methodQuantDesc'))}</p><a href="#quantitative" class="method-inline-link">${html(t('navQuant'))} ↗</a></div></section>
+      <section class="method-block"><div class="method-block-heading"><span class="method-kicker">${html(t('methodLabelQuality'))}</span><h2>${html(t('methodGateTitle'))}</h2></div>
+        <ul class="method-gates">${criteria.map(i=>`<li><span aria-hidden="true">✓</span>${html(t('methodGate'+i))}</li>`).join('')}</ul></section>
+      <section class="method-block"><div class="method-block-heading"><span class="method-kicker">${html(t('methodLabelDocumentation'))}</span><h2>${html(t('methodDocsTitle'))}</h2><p>${html(t('methodDocsDesc'))}</p></div>
+        <div class="method-resources">${protocolLinks.map(protocolLink).join('')}</div>
+        <h3 class="method-biblio-title">${html(t('methodBibliographyTitle'))}</h3>
+        <div class="method-bibliography">${db.bibliography.map(book=>`<div class="method-book"><div><strong>${html(book.title)}</strong><small>${html(book.author)} · ${html(book.year)} · ${html(book.publisher)}</small></div>${link(book.url,t('openSource'),'text-link')}</div>`).join('')}</div></section>
+      <p class="footnote">${html(t('methodNoScore'))}</p>`;
   }
   function quantitativePage() {
     const scopedClaims = metrics.claims.filter(row => visibleCases().some(c=>c.id===row.id));

@@ -81,256 +81,8 @@
       "tradition": "shared"
     }
   ],
-  "cases": [
-    {
-      "id": "MUH-001",
-      "theme": "warfare",
-      "icon": "◈",
-      "status": "initial",
-      "confidence": "unassessed",
-      "refs": [
-        {
-          "label": "Ṣaḥīḥ al-Bukhārī 3015",
-          "url": "https://sunnah.com/bukhari:3015",
-          "tradition": "sunni",
-          "collectionId": "bukhari"
-        },
-        {
-          "label": "Ṣaḥīḥ Muslim 1744b",
-          "url": "https://sunnah.com/muslim:1744b",
-          "tradition": "sunni",
-          "collectionId": "muslim"
-        }
-      ],
-      "arabicExcerpt": "فَنَهَى رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ عَنْ قَتْلِ النِّسَاءِ وَالصِّبْيَانِ",
-      "translations": {
-        "cs": {
-          "title": "Zákaz zabíjení žen a dětí",
-          "summary": "Vyprávění Ibn Umara uvádí, že po nalezení zabité ženy při vojenské výpravě Muhammad zakázal zabíjení žen a dětí.",
-          "question": "Jaký byl rozsah tohoto zákazu a jak se vztahoval k dalším podáním o vedení války?",
-          "note": "Dochované znění vypovídá o zaznamenaném zákazu, nikoli samo o sobě o konzistentní historické praxi."
-        },
-        "en": {
-          "title": "Prohibition on killing women and children",
-          "summary": "An account attributed to Ibn ʿUmar reports that, after a woman was found killed during a military expedition, Muhammad prohibited killing women and children.",
-          "question": "How broad was the prohibition, and how does it relate to other warfare reports?",
-          "note": "This transmitted wording attests a reported prohibition, not by itself a consistent historical practice."
-        },
-        "ar": {
-          "title": "النهي عن قتل النساء والأطفال",
-          "summary": "تفيد رواية ابن عمر أنه بعد العثور على امرأة مقتولة في إحدى الغزوات نُهي عن قتل النساء والصبيان.",
-          "question": "ما نطاق هذا النهي، وكيف يرتبط بالروايات الأخرى عن القتال؟",
-          "note": "تثبت صيغة الرواية وجود نهي منقول، ولا تثبت بمفردها ممارسة تاريخية متسقة."
-        },
-        "id": {
-          "title": "Larangan membunuh perempuan dan anak-anak",
-          "summary": "Riwayat yang dinisbatkan kepada Ibn Umar menyatakan bahwa setelah ditemukan perempuan terbunuh dalam sebuah ekspedisi, Muhammad melarang pembunuhan perempuan dan anak-anak.",
-          "question": "Seberapa luas cakupan larangan itu dan bagaimana hubungannya dengan riwayat peperangan lain?",
-          "note": "Teks yang diwariskan menunjukkan adanya larangan yang diriwayatkan, bukan dengan sendirinya praktik historis yang konsisten."
-        }
-      },
-      "sourceTradition": "sunni",
-      "chronology": {
-        "period": "unplaced",
-        "startYear": null,
-        "endYear": null,
-        "confidence": "undetermined",
-        "status": "not_assessed",
-        "basis": "The occurrence date has not been established from independent historical evidence. Compilation date is not event date."
-      }
-    },
-    {
-      "id": "MUH-002",
-      "theme": "warfare",
-      "icon": "◇",
-      "status": "initial",
-      "confidence": "unassessed",
-      "refs": [
-        {
-          "label": "Ṣaḥīḥ al-Bukhārī 3012",
-          "url": "https://sunnah.com/bukhari:3012",
-          "tradition": "sunni",
-          "collectionId": "bukhari"
-        },
-        {
-          "label": "Ṣaḥīḥ Muslim 1745a",
-          "url": "https://sunnah.com/muslim:1745a",
-          "tradition": "sunni",
-          "collectionId": "muslim"
-        }
-      ],
-      "arabicExcerpt": "هُمْ مِنْهُمْ",
-      "translations": {
-        "cs": {
-          "title": "Civilní oběti nočních útoků",
-          "summary": "Podání připisované as-Saʿbovi ibn Džaththámovi spojuje otázku ohrožení žen a dětí při nočním útoku s odpovědí „Jsou z nich“.",
-          "question": "Rozlišuje text úmyslné zabití od nezamýšlených obětí? Jak jej chápaly nejstarší vrstvy tradice?",
-          "note": "Výraz „Jsou z nich“ je interpretačně otevřený; vyžaduje kontext celé otázky a porovnání variant."
-        },
-        "en": {
-          "title": "Civilian casualties during night raids",
-          "summary": "A report attributed to al-Ṣaʿb ibn Jaththāma links a question about women and children being harmed in a night raid to the response ‘They are from them.’",
-          "question": "Does the wording distinguish intentional killing from unintended casualties? How was it understood in early transmission?",
-          "note": "The phrase ‘They are from them’ requires the surrounding question and variant readings for interpretation."
-        },
-        "ar": {
-          "title": "إصابة المدنيين في الغارات الليلية",
-          "summary": "تربط رواية الصعب بن جثامة سؤالاً عن إصابة النساء والصبيان في غارة ليلية بالجواب «هم منهم».",
-          "question": "هل يميز النص بين القتل المتعمد والضحايا غير المقصودين؟ وكيف فُهم في المراحل المبكرة؟",
-          "note": "عبارة «هم منهم» لا تُفسّر بمعزل عن السؤال الكامل والروايات المختلفة."
-        },
-        "id": {
-          "title": "Korban sipil dalam serangan malam",
-          "summary": "Riwayat yang dinisbatkan kepada al-Saʿb ibn Jaththamah menghubungkan pertanyaan mengenai perempuan dan anak-anak yang terkena serangan malam dengan jawaban ‘Mereka termasuk golongan mereka.’",
-          "question": "Apakah redaksinya membedakan pembunuhan sengaja dan korban tak disengaja? Bagaimana riwayat awal memahaminya?",
-          "note": "Ungkapan tersebut harus dibaca bersama konteks pertanyaan dan variasi riwayat."
-        }
-      },
-      "sourceTradition": "sunni",
-      "chronology": {
-        "period": "unplaced",
-        "startYear": null,
-        "endYear": null,
-        "confidence": "undetermined",
-        "status": "not_assessed",
-        "basis": "The occurrence date has not been established from independent historical evidence. Compilation date is not event date."
-      }
-    },
-    {
-      "id": "MUH-003",
-      "theme": "mercy",
-      "icon": "✧",
-      "status": "initial",
-      "confidence": "unassessed",
-      "refs": [
-        {
-          "label": "Ṣaḥīḥ al-Bukhārī 3231",
-          "url": "https://sunnah.com/bukhari:3231",
-          "tradition": "sunni",
-          "collectionId": "bukhari"
-        }
-      ],
-      "arabicExcerpt": "بَلْ أَرْجُو أَنْ يُخْرِجَ اللَّهُ مِنْ أَصْلاَبِهِمْ مَنْ يَعْبُدُ اللَّهَ وَحْدَهُ",
-      "translations": {
-        "cs": {
-          "title": "Odmítnutí odplaty po odmítnutí poselství",
-          "summary": "Tradice vypráví, že Muhammad odmítl nabídku nadpřirozeného zničení odpůrců a vyjádřil naději v budoucí víru jejich potomků.",
-          "question": "Co lze historicky zjišťovat o vzniku a funkci tohoto vyprávění s nadpřirozenými prvky?",
-          "note": "Nadpřirozená část vyprávění není historicky ověřitelná jako kauzální vysvětlení."
-        },
-        "en": {
-          "title": "Refusing retaliation after rejection",
-          "summary": "A tradition narrates that Muhammad declined an offer of supernatural destruction of opponents and expressed hope that their descendants would believe.",
-          "question": "What can be established historically about the origin and function of this supernatural narrative?",
-          "note": "Its supernatural episode is not historically verifiable as a causal explanation."
-        },
-        "ar": {
-          "title": "رفض الانتقام بعد رفض الدعوة",
-          "summary": "تروي إحدى الروايات أن محمداً رفض عرضاً خارقاً لإهلاك المعارضين وأبدى رجاءه في إيمان ذريتهم.",
-          "question": "ما الذي يمكن إثباته تاريخياً عن أصل هذه الرواية ووظيفتها السردية؟",
-          "note": "لا يمكن التحقق تاريخياً من الجزء الخارق للطبيعة بوصفه تفسيراً سببياً."
-        },
-        "id": {
-          "title": "Menolak pembalasan setelah penolakan",
-          "summary": "Sebuah riwayat menceritakan bahwa Muhammad menolak tawaran penghancuran lawan secara supranatural dan berharap keturunan mereka kelak beriman.",
-          "question": "Apa yang dapat diteliti secara historis mengenai asal dan fungsi kisah supranatural ini?",
-          "note": "Bagian supranatural kisah tersebut tidak dapat diverifikasi sebagai penjelasan kausal historis."
-        }
-      },
-      "sourceTradition": "sunni",
-      "chronology": {
-        "period": "unplaced",
-        "startYear": null,
-        "endYear": null,
-        "confidence": "undetermined",
-        "status": "not_assessed",
-        "basis": "The occurrence date has not been established from independent historical evidence. Compilation date is not event date."
-      }
-    },
-    {
-      "id": "MUH-004",
-      "theme": "leadership",
-      "icon": "✣",
-      "status": "initial",
-      "confidence": "unassessed",
-      "refs": [
-        {
-          "label": "Ṣaḥīḥ al-Bukhārī 4037",
-          "url": "https://sunnah.com/bukhari:4037",
-          "tradition": "sunni",
-          "collectionId": "bukhari"
-        }
-      ],
-      "arabicExcerpt": "مَنْ لِكَعْبِ بْنِ الأَشْرَفِ فَإِنَّهُ قَدْ آذَى اللَّهَ وَرَسُولَهُ",
-      "translations": {
-        "cs": {
-          "title": "Zabití Kaʿba ibn al-Ašrafa",
-          "summary": "Podání uvádí Muhammadův souhlas se zabitím Kaʿba ibn al-Ašrafa a svolení k použití lsti. Historický kontext i věrohodnost popisované události vyžadují další ověření.",
-          "question": "Jaké jsou nezávislé doklady, možné motivy konfliktu a alternativní verze události?",
-          "note": "Přisuzování motivů z jediného narativu by bylo předčasné."
-        },
-        "en": {
-          "title": "Killing of Kaʿb ibn al-Ashraf",
-          "summary": "A report describes Muhammad approving the killing of Kaʿb ibn al-Ashraf and authorizing deception. The historical setting and reliability need further study.",
-          "question": "What independent attestations, competing accounts, and plausible motives are available?",
-          "note": "Attributing motives from one narrative alone would be premature."
-        },
-        "ar": {
-          "title": "قتل كعب بن الأشرف",
-          "summary": "تذكر رواية موافقة محمد على قتل كعب بن الأشرف والسماح باستخدام الخداع. يحتاج سياق الحدث وموثوقيته إلى مزيد من التحقيق.",
-          "question": "ما الشواهد المستقلة والروايات البديلة والدوافع المحتملة للصراع؟",
-          "note": "لا يصح الجزم بالدوافع اعتماداً على رواية واحدة."
-        },
-        "id": {
-          "title": "Pembunuhan Kaʿb ibn al-Ashraf",
-          "summary": "Sebuah riwayat menggambarkan persetujuan Muhammad atas pembunuhan Kaʿb ibn al-Ashraf serta izin menggunakan tipu daya. Konteks dan keandalannya perlu diteliti.",
-          "question": "Apa bukti independen, versi alternatif, dan motif konflik yang mungkin?",
-          "note": "Mengaitkan motif berdasarkan satu narasi saja terlalu dini."
-        }
-      },
-      "sourceTradition": "sunni",
-      "chronology": {
-        "period": "unplaced",
-        "startYear": null,
-        "endYear": null,
-        "confidence": "undetermined",
-        "status": "not_assessed",
-        "basis": "The occurrence date has not been established from independent historical evidence. Compilation date is not event date."
-      }
-    }
-  ],
-  "tensions": [
-    {
-      "id": "CR-001",
-      "caseIds": [
-        "MUH-001",
-        "MUH-002"
-      ],
-      "status": "unresolved",
-      "translations": {
-        "cs": {
-          "title": "Zákaz zabíjení žen a dětí vs. noční útoky",
-          "summary": "Dva související záznamy vyvolávají otázku rozsahu zákazu zabíjení civilistů ve válečných situacích.",
-          "question": "Jde o skutečný rozpor, nebo o rozlišení mezi záměrným zabitím a nezamýšlenými oběťmi? Jak spolehlivé jsou jednotlivé tradice?"
-        },
-        "en": {
-          "title": "Prohibition on killing women and children vs. night raids",
-          "summary": "Two related accounts raise questions about the scope of the prohibition on civilian killing in warfare.",
-          "question": "Is there a real inconsistency, or a distinction between deliberate killing and unintended casualties? How reliable are the reports?"
-        },
-        "ar": {
-          "title": "النهي عن قتل النساء والأطفال مقابل الغارات الليلية",
-          "summary": "تثير روايتان مرتبطتان أسئلة بشأن نطاق النهي عن قتل المدنيين في الحرب.",
-          "question": "هل يوجد تعارض فعلي أم تمييز بين القتل المتعمد والضحايا غير المقصودين؟ وما مدى موثوقية الروايتين؟"
-        },
-        "id": {
-          "title": "Larangan membunuh perempuan dan anak-anak vs. serangan malam",
-          "summary": "Dua riwayat terkait menimbulkan pertanyaan tentang cakupan larangan membunuh warga sipil dalam peperangan.",
-          "question": "Apakah benar ada kontradiksi, atau pembedaan antara pembunuhan sengaja dan korban tidak disengaja? Seberapa andal riwayatnya?"
-        }
-      }
-    }
-  ],
+  "cases": [],
+  "tensions": [],
   "bibliography": [
     {
       "author": "Sean W. Anthony",
@@ -362,117 +114,15 @@
     }
   ],
   "chronology": {
-    "method": "The Medinan placement of each Qur’anic verse is a broad working classification inherited from surah-level tradition. Neither the exact revelation year nor relative order against any reported event is established. Hadith compilation dates are never treated as event dates.",
+    "method": "Chronology records must be source-reviewed before publication. Do not infer revelation or event date from surah order or hadith compilation date.",
     "methodReferences": [
       {
         "label": "Oxford Handbook of Qur’anic Studies: Inner-Qur’anic Chronology",
         "url": "https://academic.oup.com/edited-volume/34388/chapter-abstract/291610806"
-      },
-      {
-        "label": "Qur’an 2:190",
-        "url": "https://quran.com/2/190"
-      },
-      {
-        "label": "Qur’an 60:8",
-        "url": "https://quran.com/60/8"
       }
     ],
-    "quranPassages": [
-      {
-        "id": "Q-002-190",
-        "reference": "Q 2:190",
-        "url": "https://quran.com/2/190",
-        "theme": "warfare",
-        "tradition": "shared",
-        "arabicExcerpt": "وَقَاتِلُوا فِي سَبِيلِ اللَّهِ الَّذِينَ يُقَاتِلُونَكُمْ وَلَا تَعْتَدُوا",
-        "chronology": {
-          "period": "medinan",
-          "startYear": 622,
-          "endYear": 632,
-          "confidence": "low",
-          "status": "broad_sura_classification",
-          "basis": "Medinan surah classification, not a verified date for this individual verse."
-        },
-        "translations": {
-          "cs": {
-            "title": "Zákaz překračování mezí v boji",
-            "summary": "Text vybízí k boji proti těm, kdo bojují proti vám, a zakazuje překročení mezí."
-          },
-          "en": {
-            "title": "Limits on fighting",
-            "summary": "The passage calls for fighting those who fight you and cautions against transgression."
-          },
-          "ar": {
-            "title": "حدود القتال",
-            "summary": "يأمر المقطع بقتال من يقاتلون المخاطَبين وينهى عن الاعتداء."
-          },
-          "id": {
-            "title": "Batasan dalam peperangan",
-            "summary": "Ayat ini menyerukan perang terhadap pihak yang memerangi kalian dan melarang tindakan melampaui batas."
-          }
-        }
-      },
-      {
-        "id": "Q-060-008",
-        "reference": "Q 60:8",
-        "url": "https://quran.com/60/8",
-        "theme": "mercy",
-        "tradition": "shared",
-        "arabicExcerpt": "لَا يَنْهَاكُمُ اللَّهُ عَنِ الَّذِينَ لَمْ يُقَاتِلُوكُمْ فِي الدِّينِ",
-        "chronology": {
-          "period": "medinan",
-          "startYear": 622,
-          "endYear": 632,
-          "confidence": "low",
-          "status": "broad_sura_classification",
-          "basis": "Medinan surah classification, not a verified date for this individual verse."
-        },
-        "translations": {
-          "cs": {
-            "title": "Spravedlivé jednání s těmi, kdo nebojují",
-            "summary": "Pasáž nebrání spravedlivému a laskavému zacházení s těmi, kdo kvůli víře nebojovali ani nevyháněli."
-          },
-          "en": {
-            "title": "Justice toward those who do not fight",
-            "summary": "The passage permits kindness and justice toward those who neither fought over religion nor expelled the believers."
-          },
-          "ar": {
-            "title": "البرّ والعدل مع غير المحاربين",
-            "summary": "لا يمنع المقطع البرّ والقسط مع من لم يقاتلوا بسبب الدين ولم يخرجوا المؤمنين."
-          },
-          "id": {
-            "title": "Keadilan kepada pihak yang tidak memerangi",
-            "summary": "Ayat ini memperbolehkan kebaikan dan keadilan kepada mereka yang tidak memerangi karena agama atau mengusir orang beriman."
-          }
-        }
-      }
-    ],
-    "comparisons": [
-      {
-        "id": "CH-001",
-        "quranId": "Q-002-190",
-        "caseId": "MUH-001",
-        "relation": "thematic",
-        "order": "undetermined",
-        "basis": "Only a broad surah-level range is known; the reported event has no independently established date."
-      },
-      {
-        "id": "CH-002",
-        "quranId": "Q-002-190",
-        "caseId": "MUH-002",
-        "relation": "thematic",
-        "order": "undetermined",
-        "basis": "Only a broad surah-level range is known; the reported event has no independently established date."
-      },
-      {
-        "id": "CH-003",
-        "quranId": "Q-060-008",
-        "caseId": "MUH-002",
-        "relation": "thematic",
-        "order": "undetermined",
-        "basis": "Thematic comparison is not evidence that the Qur’anic verse preceded or superseded the narration."
-      }
-    ]
+    "quranPassages": [],
+    "comparisons": []
   },
   "profile": {
     "status": "candidate_research_map",
@@ -482,18 +132,13 @@
         "id": "civilian_protection",
         "titleKey": "quantDimCivilian",
         "questionKey": "profileQuestionCivilian",
-        "caseIds": [
-          "MUH-001",
-          "MUH-002"
-        ]
+        "caseIds": []
       },
       {
         "id": "coercion",
         "titleKey": "quantDimCoercion",
         "questionKey": "profileQuestionCoercion",
-        "caseIds": [
-          "MUH-004"
-        ]
+        "caseIds": []
       },
       {
         "id": "equal_treatment",
@@ -505,27 +150,19 @@
         "id": "mercy",
         "titleKey": "quantDimMercy",
         "questionKey": "profileQuestionMercy",
-        "caseIds": [
-          "MUH-003",
-          "MUH-004"
-        ]
+        "caseIds": []
       },
       {
         "id": "norm_consistency",
         "titleKey": "quantDimNorms",
         "questionKey": "profileQuestionNorms",
-        "caseIds": [
-          "MUH-001",
-          "MUH-002"
-        ]
+        "caseIds": []
       },
       {
         "id": "power_use",
         "titleKey": "quantDimPower",
         "questionKey": "profileQuestionPower",
-        "caseIds": [
-          "MUH-004"
-        ]
+        "caseIds": []
       }
     ]
   }

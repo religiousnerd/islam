@@ -1,48 +1,19 @@
 {
   "chronologyCounts": {
-    "comparisons": 3,
+    "comparisons": 0,
     "datedReports": 0,
-    "entries": 6
+    "entries": 0
   },
-  "claims": [
-    {
-      "attestation_count": 2,
-      "event_cluster_id": "MUH-001",
-      "id": "MUH-001",
-      "recorded_dependence_groups": 0,
-      "research_status": "candidate"
-    },
-    {
-      "attestation_count": 2,
-      "event_cluster_id": "MUH-002",
-      "id": "MUH-002",
-      "recorded_dependence_groups": 0,
-      "research_status": "candidate"
-    },
-    {
-      "attestation_count": 1,
-      "event_cluster_id": "MUH-003",
-      "id": "MUH-003",
-      "recorded_dependence_groups": 0,
-      "research_status": "candidate"
-    },
-    {
-      "attestation_count": 1,
-      "event_cluster_id": "MUH-004",
-      "id": "MUH-004",
-      "recorded_dependence_groups": 0,
-      "research_status": "candidate"
-    }
-  ],
+  "claims": [],
   "counts": {
-    "attestations": 6,
+    "attestations": 0,
     "bibliography": 4,
-    "claim_relations": 1,
-    "claims": 4,
+    "claim_relations": 0,
+    "claims": 0,
     "collections": 11,
     "dimension_reviews": 0,
     "historicity_reviews": 0,
-    "passages": 8
+    "passages": 0
   },
   "databaseVersion": 2,
   "dimensions": [
@@ -136,15 +107,7 @@
   "modelVersion": "exploratory-cluster-v1",
   "quantitativeProfile": null,
   "quantitativeProfileReason": "No research claim has reviewed historical plausibility and consensus dimension assessment. The dashboard deliberately displays no personality score.",
-  "relations": [
-    {
-      "adjudication": "open",
-      "claim_a": "MUH-001",
-      "claim_b": "MUH-002",
-      "id": "CR-001",
-      "relation_type": "possible_conflict"
-    }
-  ],
+  "relations": [],
   "schemaVersion": 1,
   "scopedIndicators": {
     "both": {
@@ -299,7 +262,7 @@
     }
   },
   "statusCounts": {
-    "candidate": 4,
+    "candidate": 0,
     "in_review": 0,
     "reviewed": 0,
     "withdrawn": 0

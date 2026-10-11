@@ -18,11 +18,6 @@ SOURCES = {
     'bukhari': 'BUKHARI', 'muslim': 'MUSLIM', 'abudawud': 'ABU_DAWUD',
     'tirmidhi': 'TIRMIDHI', 'nasai': 'NASAI', 'ibnmajah': 'IBN_MAJAH',
 }
-CLAIM_KINDS = {
-    'MUH-001': 'instruction', 'MUH-002': 'statement',
-    'MUH-003': 'event', 'MUH-004': 'action',
-}
-
 
 def main() -> None:
     research = json.loads(CATALOG.read_text(encoding='utf-8'))
@@ -35,7 +30,7 @@ def main() -> None:
                 con.execute('''INSERT INTO claims(id,event_cluster_id,proposition_en,claim_kind,period,research_status)
                     VALUES (?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET
                     proposition_en=excluded.proposition_en''',
-                    (claim_id, claim_id, english['summary'], CLAIM_KINDS[claim_id],
+                    (claim_id, claim_id, english['summary'], case['claimKind'],
                      None, 'candidate'))
                 for language, fields in case['translations'].items():
                     for field, body in fields.items():

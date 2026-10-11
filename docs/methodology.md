@@ -1,50 +1,50 @@
-# Methodology · Version 1.0
+# Historical-critical methodology · Version 2.0
 
-## Object of inquiry
+## 1. Object and falsifiability
 
-Reconstruct what can plausibly be said about the reported actions, statements, historical setting, and conduct of Muhammad (approximately 570–632 CE) using historical-critical methods. This is neither a devotional biography nor a project designed to prove a negative verdict.
+This project investigates claims about the historical Muhammad (approximately 570–632 CE), not whether supernatural events occurred. Historical explanation cannot rest on presumed prophetic infallibility, divine command or a theological conception of perfection. Equally, inconsistencies or malice are not assumed before evidence is examined. Theories must admit counterevidence and specify how conclusions could change.
 
-## Source corpus
+## 2. Source corpora and sectarian scope
 
-**Core corpus:** Ṣaḥīḥ al-Bukhārī; Ṣaḥīḥ Muslim; Sunan Abī Dāwūd; Jāmiʿ al-Tirmidhī; Sunan al-Nasāʾī; Sunan Ibn Mājah.
+The Qurʾan, the six standard Sunni hadith compilations, the four main Twelver Shiʿi hadith compilations, earlier documentary material, sīra/maghāzī, and non-Muslim testimony are distinct evidence strata. Record edition, source date, reported-event date and transmission history separately. A tradition's possession of a text does not establish its universal acceptance or authenticity among its scholars. Filtering by Sunni/Shiʿi shows provenance of cited attestations, not a verdict about acceptance.
 
-**Additional evidence:** Qurʾān; early sīra/maghāzī traditions; relevant documentary, epigraphic and non-Muslim testimonies; peer-reviewed critical scholarship. A compilation date is not necessarily the date when its component reports originated.
+## 3. Mandatory research workflow
 
-## Research pipeline
+1. Formulate a narrow, falsifiable proposition and separate the existence of a report from the reality of the event it describes.
+2. Record exact Arabic source text, collection, edition, locator, quotation boundaries and translations. Different versions receive separate source-level entries.
+3. Collect significant isnād and matn variants, common transmitters, redaction clues, chain dependencies, and the earliest reconstructable transmission stratum.
+4. Identify corroborating and disconfirming Qurʾanic, historical, documentary and non-Muslim evidence. Explain provenance and source dependence.
+5. Assess chronology (see below) and competing contextual explanations; do not infer years of revelation from conventional surah ordering, or event dates from later compilation dates.
+6. Record independent traditional grading, historical plausibility, behavioural interpretation and normative judgment, each with evidence, reviewer and uncertainty.
+7. Publish only after checking competing readings, metadata, Arabic quotations, all four localized versions, and an audit/revision trail.
 
-1. Precisely record the hypothesis and narrow claim to be tested. Identify report IDs and the Arabic original with its text edition.
-2. Identify *all material variants*, provenance, isnād lines, narrator dependence and dating assumptions. Track common transmitters instead of counting parallel attestations as independent by default.
-3. Reconstruct possible historical contexts; distinguish Qurʾānic language, later exegetical framing, and later legal doctrines. Do not simply impose later chronological frameworks.
-4. Record supporting and opposing evidence, including contradictions between Qurʾān and hadith, word and deed, one reported act and another, and conduct before and after the Hijra.
-5. Evaluate historical plausibility independently of classical hadith grading. Grade the evidentiary strength with transparent reasons, or mark **unassessed**.
-6. Write conservative interpretations about actions and possible motives. No clinical personality diagnosis, and no infallibility assumption.
-7. Record theological interpretations (including divine authorization or abrogation arguments) as historical objects of study, **not** as independently established causal explanations.
-8. Publish case records, counterexamples and an audit trail; log rejected or insufficient evidence and why it was excluded.
+## 4. Distinct assessment layers
 
-## Types of assessment (separate fields)
+- **Traditional authenticity:** named scholars' hadith classification or school-specific reception; not proof of historical truth.
+- **Historical reliability:** dating, provenance, attestation independence, textual trajectory and plausibility, with justified uncertainty or abstention.
+- **Behavioural inference:** bounded hypotheses about actions, not clinical diagnosis or direct access to motives.
+- **Normative interpretation:** explicitly attributed ethical or theological evaluations; never mixed with historical findings.
 
-- **Transmission/traditional classification:** e.g. traditional sahih/hasan/daif assessments; not proof of historicity.
-- **Historical reliability:** source age, provenance, internal coherence, independent attestation, textual changes, plausible anachronisms.
-- **Behavioural inference:** what the action, if historical, could signify; any uncertainties and counterexamples.
-- **Normative interpretation:** a separately labeled ethical reading, where requested, not conflated with historical facts.
+## 5. Contradiction adjudication
 
-## Contradiction protocol
+Every candidate contradiction begins as **unresolved textual tension**. State the two propositions, quote their exact sources, compare Arabic wording and variants, record transmission dependence, and identify differences in speakers, listeners, intent and circumstances. Investigate whether changed historical conditions, redaction, mistranslation or differing scope explain the textual conflict. If available evidence instead supports behavioural inconsistency, record that conclusion transparently. Do not dismiss a tension with "God willed it", nor declare hypocrisy from conflicting reports alone.
 
-A register entry begins with **unresolved textual tension**, not "historical contradiction proven." For each competing passage: cite full source; quote original; document variants, contexts, relative chronology and reliability; explore plausible distinctions (e.g. intentional vs collateral harm), changed circumstances, textual corruption, or later redaction. A real inconsistency can remain the best interpretation, but cannot be presumed.
+## 6. Qurʾan × reported-event chronology
 
-## Multilingual editorial controls
+Store separately: (a) proposed revelation time interval, (b) alleged event interval, (c) earliest recoverable transmission stratum, (d) extant compilation/manuscript date. Distinguish broad Meccan/Medinan attribution from independently dated individual passages. Order is established only when non-overlapping time ranges are independently justified; overlapping, speculative or undated sources remain **sequence undetermined**. Assertions of *naskh* require dated positive evidence and reception history; they cannot be used as an automatic historical reconciliation. See [chronology protocol](chronology-protocol.md).
 
-All four languages — Czech, English, Arabic and Indonesian — present the same stable evidence IDs and source pointers. Preserve Arabic excerpts in original script with RTL direction; translate researcher summaries separately. The editorial team must flag contested Arabic terms and translation uncertainty. Transliteration should be standardized in a future style guide.
+## 7. Quantitative model and limitations
 
-## Evidence statuses
+SQLite stores sources, claims, attestations, clustered dependencies, historical reviews, analytical dimensions and uncertainty. Repeated versions of one episode cannot be treated as independent corroboration without evidence. Publication of any numerical direction-of-evidence index requires a stable coding rubric, reviewed events, independent evaluators, sensitivity analysis, and explicit eligibility rules. No percentage of 'goodness', 'perfection', personality or moral worth is inferred. See [quantitative protocol](quantitative-model.md) and [behavioral profile safeguards](behavioral-profile.md).
 
-- `unassessed` — no historical-confidence conclusion.
-- `initial` — source located and quotation checked, detailed historical analysis pending.
-- `unresolved` — a registered possible conflict with no adjudicated outcome.
+## 8. Four-language quality control
 
-Additional categories require a future schema revision and explicit acceptance criteria.
+Czech, English, Arabic and Indonesian must use identical stable claim identifiers, source pointers and confidence categories. Arabic quotations remain in Arabic with proper RTL isolation, and translations are separately marked as established published translations or editorial working versions. Record divergent readings and obtain language review before promoting a finding.
 
+## 9. Editorial publication gate
 
-### Mathematical evidence analysis
+A case is not released as a reviewed historical finding until a traceable primary reference and edition, meaningful textual variants, relevant counterevidence, transmission dependencies, chronological status, separate assessments and reviewer rationale have been recorded. Unreviewed submissions remain in draft outside the published findings registry. Withheld or withdrawn cases must be documented with reasons in version history.
 
-Every scored dimension must have a public coding rubric, named reviewers, claim-level historicity uncertainty, and explicit clustering of potentially dependent reports. Subjective ranges are not objectively calibrated probabilities. Quantitative summaries describe the reviewed source sample, not historical personality or moral worth. See [quantitative model](quantitative-model.md).
+## 10. Current research status
+
+**No reviewed case findings are published.** Earlier pilot examples were deliberately withdrawn from the live catalog and SQLite observation tables so they cannot be mistaken for research results. Authentic source collection metadata, the scholarly reading list, empty schema and dimension definitions remain. Empty charts signal missing research, not an inference about Muhammad.

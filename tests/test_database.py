@@ -57,10 +57,21 @@ class DatabaseTests(unittest.TestCase):
         with sqlite3.connect(ROOT/'database/research.sqlite') as con:
             c=dict(con.execute('SELECT tradition, COUNT(*) FROM collections GROUP BY tradition'))
             self.assertEqual(c, {'sunni':6,'shia':4,'other':1})
-            self.assertEqual(con.execute('SELECT COUNT(*) FROM chronology_entries').fetchone()[0],6)
-            self.assertEqual(con.execute('SELECT COUNT(*) FROM chronology_comparisons').fetchone()[0],3)
+            self.assertEqual(con.execute('SELECT COUNT(*) FROM chronology_entries').fetchone()[0],len(catalog['cases']) + len(catalog['chronology']['quranPassages']))
+            self.assertEqual(con.execute('SELECT COUNT(*) FROM chronology_comparisons').fetchone()[0],len(catalog['chronology']['comparisons']))
             self.assertEqual(con.execute("SELECT COUNT(*) FROM chronology_comparisons WHERE assessed_order!='undetermined'").fetchone()[0],0)
             self.assertEqual(con.execute("SELECT COUNT(*) FROM chronology_entries WHERE subject_type='reported_event' AND start_year IS NOT NULL").fetchone()[0],0)
+
+    def test_no_unreviewed_demonstration_records(self):
+        catalog=json.loads((ROOT/'site/data/research.json').read_text())
+        self.assertEqual(catalog['cases'], [])
+        self.assertEqual(catalog['tensions'], [])
+        self.assertEqual(catalog['chronology']['quranPassages'], [])
+        self.assertEqual(catalog['chronology']['comparisons'], [])
+        with sqlite3.connect(ROOT/'database/research.sqlite') as con:
+            for table in ('claims','passages','attestations','claim_relations',
+                          'chronology_entries','chronology_comparisons','localized_texts'):
+                self.assertEqual(con.execute(f'SELECT COUNT(*) FROM {table}').fetchone()[0], 0)
 
     def test_numeric_input_validation_and_data_threshold(self):
         self.assertEqual(calculate([])['status'],'insufficient_data')

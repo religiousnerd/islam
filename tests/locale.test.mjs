@@ -19,4 +19,11 @@ assert.match(appSource, /scopedIndicators\?\.\[tradition\]/, 'Profile indicators
 assert.match(appSource, /profile\.caseIds\.filter/, 'Profile case links must be scoped');
 const indexHTML=readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
 assert.match(indexHTML, /<html lang="en" dir="ltr">/, 'English is the initial document language');
+for (const lang of ['cs','en','ar','id']) {
+  for (const key of ['methodLeadTitle','methodWorkflow','methodConflictTitle','methodChronTitle','methodQuantTitle','methodGateTitle','methodDocsTitle']) {
+    assert.ok(dictionaries[lang][key]?.trim(), `Missing methodology section ${lang}.${key}`);
+  }
+}
+assert.match(appSource, /function methodPage\(\)/, 'Methodology must have its own page');
+assert.match(appSource, /Array\.from\(\{length:7\}/, 'Methodology must document all seven stages');
 console.log(`OK: ${keys.length} interface strings present in all four languages`);

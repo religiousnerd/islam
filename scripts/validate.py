@@ -28,6 +28,7 @@ def main():
         verify(ident not in ids, f'Duplicate case ID: {ident}')
         ids.add(ident)
         verify(case['sourceTradition'] in ('sunni','shia','shared'), f'Missing tradition for {ident}')
+        verify(case.get('claimKind') in ('instruction','statement','event','action'), f'Invalid claim kind for {ident}')
         verify(case['chronology']['period'] in ('meccan','medinan','unplaced'), f'Bad period for {ident}')
         verify(case['confidence'] == 'unassessed', f'Premature confidence claim: {ident}')
         verify(case['refs'], f'Missing primary references: {ident}')
@@ -40,7 +41,7 @@ def main():
         for lc, tr in case['translations'].items():
             for key in ('title', 'summary', 'question', 'note'):
                 verify(isinstance(tr.get(key), str) and tr[key].strip(), f'Missing {lc}.{key}: {ident}')
-    verify(set(q['id'] for q in data['chronology']['quranPassages']) == {'Q-002-190','Q-060-008'}, 'Unexpected pilot Qurʾanic passages')
+    verify(len({q['id'] for q in data['chronology']['quranPassages']}) == len(data['chronology']['quranPassages']), 'Duplicate Qurʾanic passage IDs')
     for q in data['chronology']['quranPassages']:
         verify(q['tradition']=='shared' and q['url'].startswith('https://'), f'Invalid shared passage: {q["id"]}')
         verify(q['chronology']['status']=='broad_sura_classification', 'Verse dates cannot be overstated')

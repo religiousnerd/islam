@@ -15,7 +15,7 @@ The meaning and scope of *ʿisma* (prophetic impeccability) and moral exemplarin
 - Norm consistency: correspondence between attributed norms and conduct, with independently argued chronology.
 - Power use: reported constraints and extensions of political authority.
 
-The candidate links in `site/data/research.json` (`profile.dimensions`) **do not score** a claim. They are unreviewed study suggestions and must be presented as such. A dimension with no linked cases means no candidate has been selected—not the absence of evidence.
+The dimension definitions in `site/data/research.json` (`profile.dimensions`) are methodological categories, not established traits. No cases are currently attached. An empty dimension means research has not been admitted, **not** that there is no historical evidence.
 
 ## How numerical indicators are introduced
 
