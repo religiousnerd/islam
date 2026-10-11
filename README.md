@@ -84,7 +84,7 @@ Initial editorial records are in `site/data/research.json` and mirrored as claim
 - `ar` — Arabic (RTL layout)
 - `id` — Bahasa Indonesia
 
-For first-time visitors, English is the default language. A previously selected language persists in browser local storage when available. Original Arabic quotations remain visible regardless of UI language. Original passage numbering and URLs remain invariant across languages.
+English is the default for first-time visitors; the selected language persists in browser local storage when available. Original Arabic quotations remain visible regardless of UI language. Original passage numbering and URLs remain invariant across languages.
 
 ## Editorial notice
 
@@ -108,3 +108,25 @@ python3 -m unittest discover -s tests -v
 ## GitHub access requirement
 
 Publishing to `religiousnerd/islam` requires a GitHub credential with **Contents: read/write** for this repository. Reading a repository through a connected GitHub integration alone does not prove write authorization. GitHub Pages must be enabled with **GitHub Actions** as the build source at least once.
+
+## Sunni / Twelver Shiʿi source filter
+
+Use **Both / Sunni / Shiʿi (Twelver)** in the top bar. The filter operates on **where a passage is attested**, not on whether every member of a tradition accepts it as authentic. The six Sunni and four Twelver collections are cataloged separately. The Qurʾan is shared across both selections. The current case records cite Sunni material only, so the Shiʿi-only case list is initially empty, **not** proof of absence of comparable historical reports. Four Twelver collections are listed as research leads; no cross-sect equivalence or acceptance has been assigned without comparing actual passages.
+
+## Parallel Qurʾan / Hadith chronology
+
+Open the **Qurʾan × Hadith timeline**. On the left appear relevant Qurʾanic passages, on the right reported hadith sayings/actions. The initial Qurʾanic examples are Q 2:190 and Q 60:8. Broad Medinan placement (622–632 CE) does **not** establish the year of revelation of either verse. The original four hadith cases remain in the explicitly **undated** group, because compilation date cannot replace the date of a purported event. The comparison panel reports **sequence unproven** whenever independent dating is absent. A claim of later abrogation requires positive documentary justification and cannot be assumed from canonical surah numbering.
+
+Chronology is versioned both in the editorial catalog (`site/data/research.json`) and SQLite (`chronology_entries`, `chronology_comparisons`). Following editorial changes, run:
+
+```bash
+python3 scripts/sync_chronology.py
+python3 scripts/export_metrics.py
+python3 scripts/validate.py
+```
+
+For research-grade dating standards, see `docs/chronology-protocol.md`.
+
+## Behavioural profile (historical, not clinical)
+
+Navigate to `#profile` for a six-dimension, source-linked historical behaviour evidence map. Sunni, Twelver Shiʿi and combined views use the selected tradition. Source links are **preliminary research leads**; no psychological, moral or perfection score is asserted. See [behavioural profile protocol](docs/behavioral-profile.md) for explicit limits and rules for future numerical indicators.

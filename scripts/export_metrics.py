@@ -47,6 +47,20 @@ def export() -> dict:
         reports.append(dict(row))
     relations=[dict(r) for r in con.execute('''SELECT id,claim_a,claim_b,relation_type,adjudication
                               FROM claim_relations ORDER BY id''')]
+    scopes = {}
+    for scope in ('both', 'sunni', 'shia'):
+        indicators = {}
+        for dimension in dimensions:
+            sql = ("SELECT w.event_cluster_id,w.direction,w.plausibility_low, "
+                   "w.plausibility_high,w.interpretability FROM v_evidence_weights w WHERE w.dimension_id=?")
+            if scope != 'both':
+                sql += (" AND EXISTS (SELECT 1 FROM attestations a "
+                        "JOIN passages p ON p.id=a.passage_id "
+                        "JOIN collections c ON c.id=p.collection_id "
+                        "WHERE a.claim_id=w.claim_id AND c.tradition IN (?, 'other'))")
+            args=(dimension['id'],) if scope=='both' else (dimension['id'],scope)
+            indicators[dimension['id']]=calculate([dict(x) for x in con.execute(sql,args)])
+        scopes[scope]=indicators
     result = {
         'schemaVersion':1,
         'databaseVersion':con.execute('PRAGMA user_version').fetchone()[0],
@@ -58,9 +72,15 @@ def export() -> dict:
         'relations':relations,
         'quantitativeProfile': None,
         'exploratoryIndicators': exploratory,
+        'scopedIndicators': scopes,
         'modelVersion': MODEL_VERSION,
         'quantitativeProfileReason':'No research claim has reviewed historical plausibility and consensus dimension assessment. The dashboard deliberately displays no personality score.',
         'unitOfAnalysis':'Independent historical event clusters, not number of parallel narrations',
+        'chronologyCounts':{
+           'entries':count('chronology_entries'),
+           'comparisons':count('chronology_comparisons'),
+           'datedReports':con.execute("SELECT COUNT(*) FROM chronology_entries WHERE subject_type='reported_event' AND date_status='independently_dated'").fetchone()[0]
+        },
     }
     con.close()
     return result

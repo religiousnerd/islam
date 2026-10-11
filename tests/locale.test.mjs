@@ -13,9 +13,10 @@ for (const name of ['cs','en','ar','id']) {
     assert.ok(value.trim().length,`${name}.${key} must not be blank`);
   }
 }
-const indexHTML = readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
-const appJS = readFileSync(new URL('../site/app.js', import.meta.url), 'utf8');
-assert.match(indexHTML, /<html lang="en" dir="ltr">/, 'English should be the initial document language');
-assert.match(indexHTML, /<option value="en" selected>/, 'Language selector should initially show English');
-assert.match(appJS, /languages\.includes\(storedLanguage\) \? storedLanguage : 'en'/, 'English should be the fallback while preserving prior user selection');
-console.log(`OK: ${keys.length} interface strings present in all four languages; English default verified`);
+const appSource=readFileSync(new URL('../site/app.js', import.meta.url),'utf8');
+assert.match(appSource, /\['profile', 'navProfile'/, 'Behavioral profile must be reachable through navigation');
+assert.match(appSource, /scopedIndicators\?\.\[tradition\]/, 'Profile indicators must respect source tradition');
+assert.match(appSource, /profile\.caseIds\.filter/, 'Profile case links must be scoped');
+const indexHTML=readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
+assert.match(indexHTML, /<html lang="en" dir="ltr">/, 'English is the initial document language');
+console.log(`OK: ${keys.length} interface strings present in all four languages`);

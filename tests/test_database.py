@@ -17,7 +17,7 @@ class DatabaseTests(unittest.TestCase):
             con.execute('PRAGMA foreign_keys=ON')
             self.assertEqual(con.execute('PRAGMA integrity_check').fetchone()[0], 'ok')
             self.assertEqual(con.execute('PRAGMA foreign_key_check').fetchall(), [])
-            self.assertEqual(con.execute('PRAGMA user_version').fetchone()[0], 1)
+            self.assertEqual(con.execute('PRAGMA user_version').fetchone()[0], 2)
 
     def test_provenance_and_translation_coverage(self):
         catalog=json.loads((ROOT/'site/data/research.json').read_text())
@@ -41,8 +41,26 @@ class DatabaseTests(unittest.TestCase):
         self.assertEqual((ROOT/'site/data/research.sqlite').read_bytes(),
                          (ROOT/'database/research.sqlite').read_bytes())
         self.assertIsNone(snapshot['quantitativeProfile'])
+        for scope in ('both','sunni','shia'):
+            self.assertEqual(set(snapshot['scopedIndicators'][scope]),
+                             {d['id'] for d in snapshot['dimensions']})
+            self.assertTrue(all(ind['status']=='insufficient_data' for ind in snapshot['scopedIndicators'][scope].values()))
         self.assertEqual(snapshot['counts']['historicity_reviews'],0)
         self.assertEqual(snapshot['counts']['dimension_reviews'],0)
+
+    def test_tradition_and_chronology(self):
+        catalog=json.loads((ROOT/'site/data/research.json').read_text(encoding='utf8'))
+        counts={tradition:sum(c['tradition']==tradition for c in catalog['collections']) for tradition in ('sunni','shia','shared')}
+        self.assertEqual(counts, {'sunni':6,'shia':4,'shared':1})
+        self.assertTrue(all(c['sourceTradition']=='sunni' for c in catalog['cases']))
+        self.assertTrue(all(q['tradition']=='shared' for q in catalog['chronology']['quranPassages']))
+        with sqlite3.connect(ROOT/'database/research.sqlite') as con:
+            c=dict(con.execute('SELECT tradition, COUNT(*) FROM collections GROUP BY tradition'))
+            self.assertEqual(c, {'sunni':6,'shia':4,'other':1})
+            self.assertEqual(con.execute('SELECT COUNT(*) FROM chronology_entries').fetchone()[0],6)
+            self.assertEqual(con.execute('SELECT COUNT(*) FROM chronology_comparisons').fetchone()[0],3)
+            self.assertEqual(con.execute("SELECT COUNT(*) FROM chronology_comparisons WHERE assessed_order!='undetermined'").fetchone()[0],0)
+            self.assertEqual(con.execute("SELECT COUNT(*) FROM chronology_entries WHERE subject_type='reported_event' AND start_year IS NOT NULL").fetchone()[0],0)
 
     def test_numeric_input_validation_and_data_threshold(self):
         self.assertEqual(calculate([])['status'],'insufficient_data')
