@@ -13,7 +13,7 @@
   const safeURL = value => /^https:\/\//i.test(value ?? '') ? html(value) : '#';
   const el = id => document.getElementById(id);
   const storedLanguage = (() => { try { return localStorage.getItem('islam-language'); } catch { return null; } })();
-  let lang = languages.includes(storedLanguage) ? storedLanguage : 'cs';
+  let lang = languages.includes(storedLanguage) ? storedLanguage : 'en';
   let db;
   let metrics;
   let section = 'overview';

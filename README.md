@@ -79,12 +79,12 @@ Initial editorial records are in `site/data/research.json` and mirrored as claim
 
 ## Languages
 
-- `cs` — Czech (default)
-- `en` — English
+- `cs` — Czech
+- `en` — English (default)
 - `ar` — Arabic (RTL layout)
 - `id` — Bahasa Indonesia
 
-The selected language persists in browser local storage when available. Original Arabic quotations remain visible regardless of UI language. Original passage numbering and URLs remain invariant across languages.
+For first-time visitors, English is the default language. A previously selected language persists in browser local storage when available. Original Arabic quotations remain visible regardless of UI language. Original passage numbering and URLs remain invariant across languages.
 
 ## Editorial notice
 

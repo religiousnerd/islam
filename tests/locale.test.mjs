@@ -13,4 +13,9 @@ for (const name of ['cs','en','ar','id']) {
     assert.ok(value.trim().length,`${name}.${key} must not be blank`);
   }
 }
-console.log(`OK: ${keys.length} interface strings present in all four languages`);
+const indexHTML = readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
+const appJS = readFileSync(new URL('../site/app.js', import.meta.url), 'utf8');
+assert.match(indexHTML, /<html lang="en" dir="ltr">/, 'English should be the initial document language');
+assert.match(indexHTML, /<option value="en" selected>/, 'Language selector should initially show English');
+assert.match(appJS, /languages\.includes\(storedLanguage\) \? storedLanguage : 'en'/, 'English should be the fallback while preserving prior user selection');
+console.log(`OK: ${keys.length} interface strings present in all four languages; English default verified`);
