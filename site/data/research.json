@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "project": "Islam Historical-Critical Research",
+  "dataReviewed": "2026-10-11",
+  "collections": [
+    {"id":"bukhari","name":"Ṣaḥīḥ al-Bukhārī","date":"d. 870 CE","url":"https://sunnah.com/bukhari"},
+    {"id":"muslim","name":"Ṣaḥīḥ Muslim","date":"d. 875 CE","url":"https://sunnah.com/muslim"},
+    {"id":"abudawud","name":"Sunan Abī Dāwūd","date":"d. 889 CE","url":"https://sunnah.com/abudawud"},
+    {"id":"tirmidhi","name":"Jāmiʿ al-Tirmidhī","date":"d. 892 CE","url":"https://sunnah.com/tirmidhi"},
+    {"id":"nasai","name":"Sunan al-Nasāʾī","date":"d. 915 CE","url":"https://sunnah.com/nasai"},
+    {"id":"ibnmajah","name":"Sunan Ibn Mājah","date":"d. 887 CE","url":"https://sunnah.com/ibnmajah"}
+  ],
+  "cases": [
+    {
+      "id":"MUH-001","theme":"warfare","icon":"◈","status":"initial","confidence":"unassessed",
+      "refs":[{"label":"Ṣaḥīḥ al-Bukhārī 3015","url":"https://sunnah.com/bukhari:3015"},{"label":"Ṣaḥīḥ Muslim 1744b","url":"https://sunnah.com/muslim:1744b"}],
+      "arabicExcerpt":"فَنَهَى رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ عَنْ قَتْلِ النِّسَاءِ وَالصِّبْيَانِ",
+      "translations": {
+        "cs":{"title":"Zákaz zabíjení žen a dětí","summary":"Vyprávění Ibn Umara uvádí, že po nalezení zabité ženy při vojenské výpravě Muhammad zakázal zabíjení žen a dětí.","question":"Jaký byl rozsah tohoto zákazu a jak se vztahoval k dalším podáním o vedení války?","note":"Dochované znění vypovídá o zaznamenaném zákazu, nikoli samo o sobě o konzistentní historické praxi."},
+        "en":{"title":"Prohibition on killing women and children","summary":"An account attributed to Ibn ʿUmar reports that, after a woman was found killed during a military expedition, Muhammad prohibited killing women and children.","question":"How broad was the prohibition, and how does it relate to other warfare reports?","note":"This transmitted wording attests a reported prohibition, not by itself a consistent historical practice."},
+        "ar":{"title":"النهي عن قتل النساء والأطفال","summary":"تفيد رواية ابن عمر أنه بعد العثور على امرأة مقتولة في إحدى الغزوات نُهي عن قتل النساء والصبيان.","question":"ما نطاق هذا النهي، وكيف يرتبط بالروايات الأخرى عن القتال؟","note":"تثبت صيغة الرواية وجود نهي منقول، ولا تثبت بمفردها ممارسة تاريخية متسقة."},
+        "id":{"title":"Larangan membunuh perempuan dan anak-anak","summary":"Riwayat yang dinisbatkan kepada Ibn Umar menyatakan bahwa setelah ditemukan perempuan terbunuh dalam sebuah ekspedisi, Muhammad melarang pembunuhan perempuan dan anak-anak.","question":"Seberapa luas cakupan larangan itu dan bagaimana hubungannya dengan riwayat peperangan lain?","note":"Teks yang diwariskan menunjukkan adanya larangan yang diriwayatkan, bukan dengan sendirinya praktik historis yang konsisten."}
+      }
+    },
+    {
+      "id":"MUH-002","theme":"warfare","icon":"◇","status":"initial","confidence":"unassessed",
+      "refs":[{"label":"Ṣaḥīḥ al-Bukhārī 3012","url":"https://sunnah.com/bukhari:3012"},{"label":"Ṣaḥīḥ Muslim 1745a","url":"https://sunnah.com/muslim:1745a"}],
+      "arabicExcerpt":"هُمْ مِنْهُمْ",
+      "translations": {
+        "cs":{"title":"Civilní oběti nočních útoků","summary":"Podání připisované as-Saʿbovi ibn Džaththámovi spojuje otázku ohrožení žen a dětí při nočním útoku s odpovědí „Jsou z nich“.","question":"Rozlišuje text úmyslné zabití od nezamýšlených obětí? Jak jej chápaly nejstarší vrstvy tradice?","note":"Výraz „Jsou z nich“ je interpretačně otevřený; vyžaduje kontext celé otázky a porovnání variant."},
+        "en":{"title":"Civilian casualties during night raids","summary":"A report attributed to al-Ṣaʿb ibn Jaththāma links a question about women and children being harmed in a night raid to the response ‘They are from them.’","question":"Does the wording distinguish intentional killing from unintended casualties? How was it understood in early transmission?","note":"The phrase ‘They are from them’ requires the surrounding question and variant readings for interpretation."},
+        "ar":{"title":"إصابة المدنيين في الغارات الليلية","summary":"تربط رواية الصعب بن جثامة سؤالاً عن إصابة النساء والصبيان في غارة ليلية بالجواب «هم منهم».","question":"هل يميز النص بين القتل المتعمد والضحايا غير المقصودين؟ وكيف فُهم في المراحل المبكرة؟","note":"عبارة «هم منهم» لا تُفسّر بمعزل عن السؤال الكامل والروايات المختلفة."},
+        "id":{"title":"Korban sipil dalam serangan malam","summary":"Riwayat yang dinisbatkan kepada al-Saʿb ibn Jaththamah menghubungkan pertanyaan mengenai perempuan dan anak-anak yang terkena serangan malam dengan jawaban ‘Mereka termasuk golongan mereka.’","question":"Apakah redaksinya membedakan pembunuhan sengaja dan korban tak disengaja? Bagaimana riwayat awal memahaminya?","note":"Ungkapan tersebut harus dibaca bersama konteks pertanyaan dan variasi riwayat."}
+      }
+    },
+    {
+      "id":"MUH-003","theme":"mercy","icon":"✧","status":"initial","confidence":"unassessed",
+      "refs":[{"label":"Ṣaḥīḥ al-Bukhārī 3231","url":"https://sunnah.com/bukhari:3231"}],
+      "arabicExcerpt":"بَلْ أَرْجُو أَنْ يُخْرِجَ اللَّهُ مِنْ أَصْلاَبِهِمْ مَنْ يَعْبُدُ اللَّهَ وَحْدَهُ",
+      "translations": {
+        "cs":{"title":"Odmítnutí odplaty po odmítnutí poselství","summary":"Tradice vypráví, že Muhammad odmítl nabídku nadpřirozeného zničení odpůrců a vyjádřil naději v budoucí víru jejich potomků.","question":"Co lze historicky zjišťovat o vzniku a funkci tohoto vyprávění s nadpřirozenými prvky?","note":"Nadpřirozená část vyprávění není historicky ověřitelná jako kauzální vysvětlení."},
+        "en":{"title":"Refusing retaliation after rejection","summary":"A tradition narrates that Muhammad declined an offer of supernatural destruction of opponents and expressed hope that their descendants would believe.","question":"What can be established historically about the origin and function of this supernatural narrative?","note":"Its supernatural episode is not historically verifiable as a causal explanation."},
+        "ar":{"title":"رفض الانتقام بعد رفض الدعوة","summary":"تروي إحدى الروايات أن محمداً رفض عرضاً خارقاً لإهلاك المعارضين وأبدى رجاءه في إيمان ذريتهم.","question":"ما الذي يمكن إثباته تاريخياً عن أصل هذه الرواية ووظيفتها السردية؟","note":"لا يمكن التحقق تاريخياً من الجزء الخارق للطبيعة بوصفه تفسيراً سببياً."},
+        "id":{"title":"Menolak pembalasan setelah penolakan","summary":"Sebuah riwayat menceritakan bahwa Muhammad menolak tawaran penghancuran lawan secara supranatural dan berharap keturunan mereka kelak beriman.","question":"Apa yang dapat diteliti secara historis mengenai asal dan fungsi kisah supranatural ini?","note":"Bagian supranatural kisah tersebut tidak dapat diverifikasi sebagai penjelasan kausal historis."}
+      }
+    },
+    {
+      "id":"MUH-004","theme":"leadership","icon":"✣","status":"initial","confidence":"unassessed",
+      "refs":[{"label":"Ṣaḥīḥ al-Bukhārī 4037","url":"https://sunnah.com/bukhari:4037"}],
+      "arabicExcerpt":"مَنْ لِكَعْبِ بْنِ الأَشْرَفِ فَإِنَّهُ قَدْ آذَى اللَّهَ وَرَسُولَهُ",
+      "translations": {
+        "cs":{"title":"Zabití Kaʿba ibn al-Ašrafa","summary":"Podání uvádí Muhammadův souhlas se zabitím Kaʿba ibn al-Ašrafa a svolení k použití lsti. Historický kontext i věrohodnost popisované události vyžadují další ověření.","question":"Jaké jsou nezávislé doklady, možné motivy konfliktu a alternativní verze události?","note":"Přisuzování motivů z jediného narativu by bylo předčasné."},
+        "en":{"title":"Killing of Kaʿb ibn al-Ashraf","summary":"A report describes Muhammad approving the killing of Kaʿb ibn al-Ashraf and authorizing deception. The historical setting and reliability need further study.","question":"What independent attestations, competing accounts, and plausible motives are available?","note":"Attributing motives from one narrative alone would be premature."},
+        "ar":{"title":"قتل كعب بن الأشرف","summary":"تذكر رواية موافقة محمد على قتل كعب بن الأشرف والسماح باستخدام الخداع. يحتاج سياق الحدث وموثوقيته إلى مزيد من التحقيق.","question":"ما الشواهد المستقلة والروايات البديلة والدوافع المحتملة للصراع؟","note":"لا يصح الجزم بالدوافع اعتماداً على رواية واحدة."},
+        "id":{"title":"Pembunuhan Kaʿb ibn al-Ashraf","summary":"Sebuah riwayat menggambarkan persetujuan Muhammad atas pembunuhan Kaʿb ibn al-Ashraf serta izin menggunakan tipu daya. Konteks dan keandalannya perlu diteliti.","question":"Apa bukti independen, versi alternatif, dan motif konflik yang mungkin?","note":"Mengaitkan motif berdasarkan satu narasi saja terlalu dini."}
+      }
+    }
+  ],
+  "tensions": [
+    {
+      "id":"CR-001","caseIds":["MUH-001","MUH-002"],"status":"unresolved",
+      "translations":{
+        "cs":{"title":"Zákaz zabíjení žen a dětí vs. noční útoky","summary":"Dva související záznamy vyvolávají otázku rozsahu zákazu zabíjení civilistů ve válečných situacích.","question":"Jde o skutečný rozpor, nebo o rozlišení mezi záměrným zabitím a nezamýšlenými oběťmi? Jak spolehlivé jsou jednotlivé tradice?"},
+        "en":{"title":"Prohibition on killing women and children vs. night raids","summary":"Two related accounts raise questions about the scope of the prohibition on civilian killing in warfare.","question":"Is there a real inconsistency, or a distinction between deliberate killing and unintended casualties? How reliable are the reports?"},
+        "ar":{"title":"النهي عن قتل النساء والأطفال مقابل الغارات الليلية","summary":"تثير روايتان مرتبطتان أسئلة بشأن نطاق النهي عن قتل المدنيين في الحرب.","question":"هل يوجد تعارض فعلي أم تمييز بين القتل المتعمد والضحايا غير المقصودين؟ وما مدى موثوقية الروايتين؟"},
+        "id":{"title":"Larangan membunuh perempuan dan anak-anak vs. serangan malam","summary":"Dua riwayat terkait menimbulkan pertanyaan tentang cakupan larangan membunuh warga sipil dalam peperangan.","question":"Apakah benar ada kontradiksi, atau pembedaan antara pembunuhan sengaja dan korban tidak disengaja? Seberapa andal riwayatnya?"}
+      }
+    }
+  ],
+  "bibliography":[
+    {"author":"Sean W. Anthony","title":"Muhammad and the Empires of Faith: The Making of the Prophet of Islam","year":2020,"publisher":"University of California Press","url":"https://www.ucpress.edu/books/muhammad-and-the-empires-of-faith/paper"},
+    {"author":"Andreas Görke & Gregor Schoeler","title":"The Earliest Writings on the Life of Muḥammad: The ʿUrwa Corpus and the Non-Muslim Sources","year":2024,"publisher":"Gerlach Press","url":"https://www.research.ed.ac.uk/en/publications/the-earliest-writings-on-the-life-of-mu%E1%B8%A5ammad-the-urwa-corpus-and/"},
+    {"author":"Harald Motzki (ed.)","title":"The Biography of Muḥammad: The Issue of the Sources","year":2000,"publisher":"Brill","url":"https://brill.com/display/title/7381"},
+    {"author":"Gregor Schoeler","title":"The Biography of Muhammad: Nature and Authenticity","year":2011,"publisher":"Routledge","url":"https://www.routledge.com/The-Biography-of-Muhammad-Nature-and-Authenticity/Schoeler/p/book/9780415620537"}
+  ]
+}

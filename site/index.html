@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="cs" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description" content="An open, multilingual historical-critical research dashboard on the life and reported actions of Muhammad.">
+  <title>Islam · Historical-Critical Research</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script src="./i18n.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Site navigation">
+      <a class="brand" href="#overview" aria-label="Home"><span class="brandmark">✳</span><span>ISLAM<span class="branddot">.</span><small>HISTORICAL RESEARCH</small></span></a>
+      <div class="side-caption" data-i18n="workspace">RESEARCH WORKSPACE</div>
+      <nav id="navigation" class="navigation"></nav>
+      <div class="sidebar-footer"><span class="pulse"></span><span data-i18n="researchNotice">Evidence-led · Work in progress</span></div>
+    </aside>
+    <div class="maincol">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb"><span data-i18n="project">Research project</span><span class="breadcrumb-chevron">/</span><strong id="breadcrumbCurrent">Overview</strong></div>
+        <div class="toolbar"><label class="language-label" for="language" data-i18n="language">Language</label><select id="language" aria-label="Language"><option value="cs">Čeština</option><option value="en">English</option><option value="ar">العربية</option><option value="id">Bahasa Indonesia</option></select><a class="github-link" href="https://github.com/religiousnerd/islam" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">⌘ <span>GitHub</span> ↗</a></div>
+      </header>
+      <main id="content" tabindex="-1"></main>
+      <footer class="site-footer"><span>© 2026 Islam Research Project</span><span id="footerNote"></span><a href="https://github.com/religiousnerd/islam" target="_blank" rel="noopener noreferrer">github.com/religiousnerd/islam ↗</a></footer>
+    </div>
+  </div>
+  <dialog id="caseDialog" class="case-dialog" aria-labelledby="dialogTitle"><div id="dialogBody"></div><form method="dialog"><button class="dialog-close" aria-label="Close">✕</button></form></dialog>
+  <noscript><div class="noscript">This dashboard requires JavaScript. / Tento dashboard vyžaduje JavaScript.</div></noscript>
+</body>
+</html>

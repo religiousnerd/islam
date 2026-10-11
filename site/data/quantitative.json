@@ -1,0 +1,151 @@
+{
+  "claims": [
+    {
+      "attestation_count": 2,
+      "event_cluster_id": "MUH-001",
+      "id": "MUH-001",
+      "recorded_dependence_groups": 0,
+      "research_status": "candidate"
+    },
+    {
+      "attestation_count": 2,
+      "event_cluster_id": "MUH-002",
+      "id": "MUH-002",
+      "recorded_dependence_groups": 0,
+      "research_status": "candidate"
+    },
+    {
+      "attestation_count": 1,
+      "event_cluster_id": "MUH-003",
+      "id": "MUH-003",
+      "recorded_dependence_groups": 0,
+      "research_status": "candidate"
+    },
+    {
+      "attestation_count": 1,
+      "event_cluster_id": "MUH-004",
+      "id": "MUH-004",
+      "recorded_dependence_groups": 0,
+      "research_status": "candidate"
+    }
+  ],
+  "counts": {
+    "attestations": 6,
+    "bibliography": 4,
+    "claim_relations": 1,
+    "claims": 4,
+    "collections": 6,
+    "dimension_reviews": 0,
+    "historicity_reviews": 0,
+    "passages": 6
+  },
+  "databaseVersion": 1,
+  "dimensions": [
+    {
+      "coded_reviews": 0,
+      "id": "civilian_protection",
+      "name_en": "Protection of noncombatants",
+      "reviewed_clusters": 0
+    },
+    {
+      "coded_reviews": 0,
+      "id": "coercion",
+      "name_en": "Use of coercion",
+      "reviewed_clusters": 0
+    },
+    {
+      "coded_reviews": 0,
+      "id": "equal_treatment",
+      "name_en": "Equal treatment",
+      "reviewed_clusters": 0
+    },
+    {
+      "coded_reviews": 0,
+      "id": "mercy",
+      "name_en": "Merciful treatment",
+      "reviewed_clusters": 0
+    },
+    {
+      "coded_reviews": 0,
+      "id": "norm_consistency",
+      "name_en": "Consistency of stated norms and actions",
+      "reviewed_clusters": 0
+    },
+    {
+      "coded_reviews": 0,
+      "id": "power_use",
+      "name_en": "Exercise of political power",
+      "reviewed_clusters": 0
+    }
+  ],
+  "exploratoryIndicators": {
+    "civilian_protection": {
+      "estimate": null,
+      "independent_event_clusters": 0,
+      "minimum_for_display": 5,
+      "scenario_p10": null,
+      "scenario_p90": null,
+      "status": "insufficient_data"
+    },
+    "coercion": {
+      "estimate": null,
+      "independent_event_clusters": 0,
+      "minimum_for_display": 5,
+      "scenario_p10": null,
+      "scenario_p90": null,
+      "status": "insufficient_data"
+    },
+    "equal_treatment": {
+      "estimate": null,
+      "independent_event_clusters": 0,
+      "minimum_for_display": 5,
+      "scenario_p10": null,
+      "scenario_p90": null,
+      "status": "insufficient_data"
+    },
+    "mercy": {
+      "estimate": null,
+      "independent_event_clusters": 0,
+      "minimum_for_display": 5,
+      "scenario_p10": null,
+      "scenario_p90": null,
+      "status": "insufficient_data"
+    },
+    "norm_consistency": {
+      "estimate": null,
+      "independent_event_clusters": 0,
+      "minimum_for_display": 5,
+      "scenario_p10": null,
+      "scenario_p90": null,
+      "status": "insufficient_data"
+    },
+    "power_use": {
+      "estimate": null,
+      "independent_event_clusters": 0,
+      "minimum_for_display": 5,
+      "scenario_p10": null,
+      "scenario_p90": null,
+      "status": "insufficient_data"
+    }
+  },
+  "modelVersion": "exploratory-cluster-v1",
+  "quantitativeProfile": null,
+  "quantitativeProfileReason": "No research claim has reviewed historical plausibility and consensus dimension assessment. The dashboard deliberately displays no personality score.",
+  "relations": [
+    {
+      "adjudication": "open",
+      "claim_a": "MUH-001",
+      "claim_b": "MUH-002",
+      "id": "CR-001",
+      "relation_type": "possible_conflict"
+    }
+  ],
+  "schemaVersion": 1,
+  "statusCounts": {
+    "candidate": 4,
+    "in_review": 0,
+    "reviewed": 0,
+    "withdrawn": 0
+  },
+  "unitOfAnalysis": "Independent historical event clusters, not number of parallel narrations"
+}

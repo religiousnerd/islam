@@ -1,0 +1,59 @@
+name: Validate and deploy dashboard to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate research data and translations
+        run: |
+          python3 scripts/validate.py
+          python3 -m unittest discover -s tests -v
+          node tests/locale.test.mjs
+      - name: Check reproducible SQLite exports
+        run: |
+          python3 scripts/export_metrics.py
+          git diff --exit-code -- site/data/quantitative.json site/data/research.sqlite
+      - name: Validate JavaScript syntax
+        run: |
+          node --check site/i18n.js
+          node --check site/app.js
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
