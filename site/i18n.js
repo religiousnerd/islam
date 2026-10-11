@@ -1,9 +1,9 @@
 /* Interface and research labels. Locale content for research records lives in data/research.json. */
 window.I18N = {
  cs: {
-   navProfile:"Profil jednání",
+   navProfile:"Psychologický profil",
    profileEyebrow:"VÝZKUM / BEHAVIORÁLNÍ PROFIL",
-   profileTitle:"Historicko-behaviorální profil Muhammada",
+   profileTitle:"Psychologický a behaviorální profil Muhammada na základě historických pramenů",
    profileIntro:"Mapa výpovědí o připisovaném jednání, budovaná ze zdrojově kritických hodnocení. Nejde o psychologickou diagnózu ani objektivní měření osobnosti.",
    profileClaimTitle:"Jak prověřovat tvrzení o prorocké dokonalosti?",
    profileClaimText:"Muslimské tradice se v pojetí prorocké bezhříšnosti (ʿisma) a vzornosti liší. Nejdříve je třeba vymezit konkrétní tvrzení, poté hledat doklady pro ně i proti nim. Boží vůle není historickým vysvětlením; samotná pramenná napětí však také neprokazují historické jednání.",
@@ -116,9 +116,9 @@ window.I18N = {
    footer:'Otevřený projekt · Předběžné záznamy nejsou historické verdikty.',back:'Zpět',pilot:'Pilotní studie · násilí a zacházení s protivníky',noScoring:'Žádné skóre morální dokonalosti ani osobnosti.'
  },
  en: {
-   navProfile:"Behavioural profile",
+   navProfile:"Psychological profile",
    profileEyebrow:"RESEARCH / BEHAVIOURAL PROFILE",
-   profileTitle:"Historical behavioural profile of Muhammad",
+   profileTitle:"Historical psychological and behavioural evidence profile of Muhammad",
    profileIntro:"An evidence map of attributed conduct, built from source-critical reviews. It is neither a psychological diagnosis nor an objective measurement of personality.",
    profileClaimTitle:"How can claims of prophetic perfection be examined?",
    profileClaimText:"Muslim traditions differ on prophetic impeccability (ʿisma) and exemplary conduct. First specify the concrete claim, then seek both supporting and contrary evidence. Divine will is not a historical explanation; textual tensions alone also do not establish historical conduct.",
@@ -231,9 +231,9 @@ window.I18N = {
    footer:'Open project · Preliminary records are not historical verdicts.',back:'Back',pilot:'Pilot study · violence and treatment of opponents',noScoring:'No moral perfection or personality scores.'
  },
  ar: {
-   navProfile:"الملف السلوكي",
+   navProfile:"الملف النفسي",
    profileEyebrow:"البحث / الملف السلوكي",
-   profileTitle:"الملف التاريخي لسلوك محمد",
+   profileTitle:"الملف النفسي والسلوكي لمحمد وفق المصادر التاريخية",
    profileIntro:"خريطة أدلة للسلوك المنسوب إلى محمد تستند إلى نقد المصادر. وليست تشخيصاً نفسياً ولا قياساً موضوعياً للشخصية.",
    profileClaimTitle:"كيف يمكن اختبار دعاوى كمال النبي؟",
    profileClaimText:"تختلف التقاليد الإسلامية في فهم عصمة الأنبياء والسلوك النموذجي. نحدد الدعوى المعنية ثم نبحث عن الأدلة المؤيدة والمخالفة. المشيئة الإلهية ليست تفسيراً تاريخياً، كما أن توتر النصوص وحده لا يثبت الفعل تاريخياً.",
@@ -346,9 +346,9 @@ window.I18N = {
    footer:'مشروع مفتوح · السجلات الأولية ليست أحكاماً تاريخية نهائية.',back:'عودة',pilot:'دراسة أولية · العنف ومعاملة الخصوم',noScoring:'لا درجات للكمال الأخلاقي أو الشخصية.'
  },
  id: {
-   navProfile:"Profil perilaku",
+   navProfile:"Profil psikologis",
    profileEyebrow:"RISET / PROFIL PERILAKU",
-   profileTitle:"Profil historis perilaku Muhammad",
+   profileTitle:"Profil psikologis dan perilaku Muhammad berdasarkan sumber sejarah",
    profileIntro:"Peta bukti tentang tindakan yang dinisbatkan kepada Muhammad, berdasarkan kritik sumber. Bukan diagnosis psikologis ataupun ukuran objektif kepribadian.",
    profileClaimTitle:"Bagaimana menguji klaim kesempurnaan nabi?",
    profileClaimText:"Tradisi Islam berbeda dalam memahami kemaksuman nabi (ʿisma) dan keteladanan. Kita harus merumuskan klaim konkret, lalu mencari bukti pendukung dan pembanding. Kehendak Tuhan bukan penjelasan historis; ketegangan antarteks saja juga bukan bukti tindakan sejarah.",
