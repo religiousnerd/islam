@@ -1,0 +1,360 @@
+/* Islam Research · Editorial Design System
+   Purely presentational layer; no changes to research data or methodology.
+   Supports cs, en, id and ar (including true RTL).
+ */
+:root{
+  --ui-paper:#f5f3ec;
+  --ui-surface:#fbfaf7;
+  --ui-ink:#1a3030;
+  --ui-muted:#586c63;
+  --ui-muted-soft:#718278;
+  --ui-line:#dbe0d6;
+  --ui-forest:#173e3c;
+  --ui-forest-dark:#112e30;
+  --ui-green:#427a69;
+  --ui-gold:#c6a66d;
+  --ui-serif:Georgia,"Iowan Old Style","Palatino Linotype",serif;
+  color:var(--ui-ink);
+  background:var(--ui-paper);
+  -webkit-font-smoothing:antialiased
+}
+*{scroll-margin-top:95px}
+body{
+  background:radial-gradient(ellipse 85% 540px at 85% -140px,rgba(210,221,204,.38),transparent 77%),var(--ui-paper);
+  color:var(--ui-ink)
+}
+::selection{background:#d3e6d9;color:#153e36}
+:where(a,button,input,select):focus-visible{
+  outline:3px solid #c19a59;
+  outline-offset:3px
+}
+.shell{grid-template-columns:254px minmax(0,1fr)}
+/* Consistent, legible, permanent navigation for the research workspace */
+.sidebar{
+  background:var(--ui-forest-dark);
+  border-inline-end:1px solid #2a4a49;
+  box-shadow:10px 0 28px rgba(15,47,42,.065);
+  color:#eaf0e7;
+  padding:34px 17px 23px
+}
+.brand{color:#f1f2e7;padding-inline:10px;font-size:21px;letter-spacing:.13em;gap:12px}
+.brandmark{
+  width:42px;height:42px;border-radius:12px;
+  background:#264c49;color:#dfc58c;
+  border:1px solid rgba(235,247,229,.13);
+  box-shadow:0 0 0 3px rgba(242,247,238,.02)
+}
+.branddot{color:#d0b781}
+.brand small{color:#abc2b5;letter-spacing:.17em;font-size:8px;margin-top:5px}
+.side-caption{margin:68px 13px 17px;color:#9fbab0;font-size:10px;letter-spacing:.16em}
+.navigation{gap:5px}
+.nav-item{
+  border:1px solid transparent;
+  border-radius:9px;
+  color:#b8cbc2;
+  font-size:12.5px;
+  min-height:46px;
+  padding:12px 13px;
+  transition:background .18s,color .18s,border-color .18s
+}
+.nav-item:hover{
+  background:rgba(225,243,233,.085);
+  color:#f9fcf7;
+  border-color:rgba(233,244,230,.085)
+}
+.nav-item.active{
+  background:#e7eee6;
+  color:#193e38;
+  border-color:#e9f0e7;
+  box-shadow:0 6px 18px rgba(4,28,24,.11)
+}
+.nav-icon{font-size:19px;width:22px}
+.active-marker{background:#45806a;width:6px;height:6px}
+.sidebar-footer{
+  border-top:1px solid #385653;
+  color:#aec5b8;
+  padding:18px 12px 2px;
+  font-size:10.5px;
+  line-height:1.6
+}
+.sidebar-footer .pulse{background:var(--ui-gold);box-shadow:0 0 0 3px rgba(198,166,109,.12)}
+/* Utility toolbar and navigation remain visible while examining a record */
+.topbar{
+  height:auto;min-height:74px;
+  position:sticky;top:0;z-index:4;
+  background:rgba(251,250,246,.94);
+  backdrop-filter:blur(17px);
+  -webkit-backdrop-filter:blur(17px);
+  border-bottom:1px solid var(--ui-line);
+  padding:13px clamp(24px,4vw,62px);
+  gap:13px
+}
+.breadcrumb{gap:11px;color:#5a7268;font-size:12px}
+.breadcrumb strong{color:#285348}
+.toolbar{gap:10px;row-gap:7px}
+.tradition-label,.language-label{color:#536c62;font-size:10px;font-weight:760;letter-spacing:.02em}
+.toolbar select{
+  background:#fff;
+  border:1px solid #d2dcd3;
+  border-radius:8px;
+  color:#20483e;
+  min-height:39px;
+  max-width:190px;
+  padding:8px 29px 8px 12px;
+  box-shadow:0 1px 2px rgba(12,38,32,.02)
+}
+.toolbar select:hover{border-color:#95b3a2}
+.github-link{border-inline-start:1px solid #d3ded4;color:#315f50;padding-inline-start:15px}
+#content{max-width:1420px;margin-inline:auto;padding:40px clamp(24px,4vw,62px) 76px}
+.site-footer{max-width:1420px;padding:26px clamp(24px,4vw,62px) 35px;color:#687e70;border-top:1px solid var(--ui-line);font-size:11px}
+.site-footer a:hover,.text-link:hover,.inline-button:hover{text-decoration:underline;text-underline-offset:4px}
+/* An archival, editorial hero: distinctive without implying a verdict */
+.hero{
+  min-height:402px;
+  grid-template-columns:minmax(0,1.34fr) minmax(225px,.66fr);
+  background:var(--ui-forest-dark);
+  border:1px solid #31534f;
+  border-radius:15px;
+  box-shadow:0 15px 35px rgba(18,45,40,.10)
+}
+.hero-copy{padding:57px 24px 58px clamp(35px,4.4vw,66px)}
+.hero .eyebrow{color:#b4d3c1;margin-bottom:21px;letter-spacing:.17em;line-height:1.7}
+.line-accent{background:var(--ui-gold);width:31px;height:2px}
+.hero h1{
+  font-family:var(--ui-serif);
+  font-size:clamp(37px,3.45vw,57px);
+  line-height:1.12;
+  font-weight:400;
+  letter-spacing:-.039em;
+  text-wrap:balance
+}
+.hero p{font-size:14px;color:#cfdbd3;max-width:640px;line-height:1.85;margin-top:21px}
+.hero-actions{gap:10px;margin-top:30px}
+.primary-button,.secondary-button{
+  min-height:43px;
+  padding:12px 17px;
+  gap:13px;
+  border-radius:8px;
+  transition:transform .16s,background .16s,border-color .16s
+}
+.primary-button{background:#e8e8d8;color:#183a37}
+.primary-button:hover{background:#fff;transform:translateY(-1px)}
+.secondary-button{border-color:#658379;color:#edf4e9}
+.secondary-button:hover{border-color:#d5dfd6;background:rgba(255,255,255,.06)}
+.hero-art{
+  background:radial-gradient(circle at 52% 48%,rgba(116,151,135,.23),transparent 55%),linear-gradient(145deg,#234e4b,#123336);
+  border-inline-start:1px solid rgba(236,244,229,.12)
+}
+.art-ring{border-color:#8ea89b;opacity:.28}
+.art-center{color:#dfbd7e;text-shadow:0 0 60px rgba(223,189,126,.18);font-size:116px}
+.art-code{color:#a8c9b8;letter-spacing:.16em;line-height:1.7}
+.stats{
+  margin:17px 0 36px;
+  padding:25px 8px;
+  background:var(--ui-surface);
+  border:1px solid var(--ui-line);
+  border-radius:12px;
+  box-shadow:0 7px 24px rgba(23,50,44,.035)
+}
+.stat{padding:6px 25px;gap:7px;border-inline-end:1px solid #e1e5dc}
+.stat strong{font-family:var(--ui-serif);color:#285c4f;font-size:38px;letter-spacing:-.04em}
+.stat span{font-size:11px;color:#556e62;line-height:1.5}
+/* Readers must be able to scan context, supporting evidence and uncertainty */
+.section-heading{padding:22px 0 35px;border-bottom:1px solid var(--ui-line);margin-bottom:28px}
+.section-heading h1{
+  font-family:var(--ui-serif);
+  font-size:clamp(36px,3.65vw,53px);
+  letter-spacing:-.04em;
+  line-height:1.12;
+  text-wrap:balance;
+  color:var(--ui-ink)
+}
+.section-heading p{color:#5a7165;font-size:14px;max-width:840px;line-height:1.82}
+.eyebrow,.micro-label{font-size:10px;letter-spacing:.16em;color:#477e6c}
+.content-section{margin-top:42px}
+.section-titleline h2,.panel h2,.rule-section h2{font-size:22px;color:#223e38;letter-spacing:-.03em}
+.section-titleline p,.panel>p{color:#597368;font-size:12.5px;line-height:1.75}
+.text-link,.inline-button{color:#286d58;font-size:12px}
+.empty{
+  padding:32px;
+  background:#f8f9f4;
+  border:1px dashed #b7cabd;
+  border-radius:12px;
+  color:#586f63;
+  font-size:13px;
+  line-height:1.8
+}
+.case-grid{gap:17px}
+.case-card,.panel,.register-card,.source-list,
+.method-card,.method-stage,.method-chron-card,
+.quant-stat,.profile-dimension,.profile-summary>div,.chron-card{
+  background:var(--ui-surface);
+  border:1px solid #dce2d7;
+  box-shadow:0 6px 24px rgba(24,51,43,.032)
+}
+.case-card{
+  border-radius:12px;
+  min-height:279px;
+  padding:25px;
+  transition:transform .18s,box-shadow .18s,border-color .18s
+}
+.case-card:hover{
+  transform:translateY(-2px);
+  border-color:#aec8b8;
+  box-shadow:0 15px 30px rgba(24,51,43,.075)
+}
+.case-symbol{background:#e5eee7;color:#336d5b;border-radius:8px}
+.case-id{color:#668076}
+.case-tag{color:#3f7965}
+.case-card h3{color:#243f38;font-size:17px}
+.case-card p{color:#597064;font-size:12.5px;line-height:1.78}
+.small-status{color:#87704b}
+.panel{padding:29px;border-radius:12px}
+.lower-grid{gap:18px}
+.timeline-row{border-inline-start-color:#bad0c0}
+.timeline-row b{color:#286858}
+.timeline-row span{color:#5a7064}
+.tension-box{background:#f7f6f0;border-color:#e5e2d9}
+.tension-box p{color:#61766a}
+.principle{background:#e7efe6;border:1px solid #d8e5d9;border-radius:12px;padding:26px 29px}
+.principle-icon{color:#467d6b}
+.principle p{color:#506b5e;font-size:12.5px}
+.filters{gap:13px}
+.search-wrap{background:#fff;border-color:#d7e1d6;max-width:550px}
+.search-wrap input{font-size:13px}
+.filters select{border-color:#d7e1d6}
+.source-list{border-radius:12px}
+.source-row{border-bottom:1px solid #e2e7df}
+.source-row:hover{background:#f0f4ec}
+.source-info h3{color:#26473b}
+.source-info small{color:#677d71}
+.register-card{border-radius:12px}
+.register-card>p{color:#596e63}
+.research-question{background:#eef4ec}
+.research-question p{color:#436354}
+.case-chip{border-color:#c4d8c8}
+/* The chronology preserves source-family differentiation in every locale */
+.chron-notice{background:#eef3e9;border-color:#cbdbcd}
+.chron-notice p{color:#4c6958}
+.chron-columns{color:#2d6354;font-weight:750}
+.chron-period-heading{border-top-color:#d8e1d8}
+.chron-card{border-radius:12px;padding:21px}
+.chron-quran{border-inline-start:3px solid #3d8469}
+.chron-hadith{border-inline-start:3px solid #a78a5d}
+.chron-card h3{color:#27493d}
+.chron-card>p{color:#4f6d5e}
+.chron-card blockquote{background:#eff3eb}
+.chron-period{background:#e8f0e7;color:#456b55}
+/* Research / methodology cards are readable rather than decorative scores */
+.quant-stat strong,.profile-summary strong{color:#2f6654}
+.quant-stat span,.profile-summary span{color:#557061}
+.quant-warning,.profile-premise{background:#edf3ea;border-color:#cddfce}
+.quant-warning p,.profile-premise p{color:#4d695a}
+.quant-download{background:#eaf2e8}
+.quant-download .primary-button{background:#215048;color:#fff}
+.profile-question,.profile-method p{color:#4b695a}
+.profile-empty{background:#f7f8f3;color:#687d6e}
+.method-lead{background:var(--ui-forest-dark);border:1px solid #2a504a;border-radius:13px}
+.method-lead h2{font-family:var(--ui-serif);font-size:clamp(24px,2.6vw,37px)}
+.method-lead p{color:#d3e0d6}
+.method-status{background:#faf7ee;border-color:#e4decc}
+.method-block{margin-top:44px}
+.method-block-heading h2,.method-quant h2{color:#253f38}
+.method-block-heading>p,.method-quant>p{color:#567062}
+.method-stage{border-radius:10px}
+.method-stage-num,.method-layer-index{color:#668b79}
+.method-stage h3,.method-layer h3,.method-chron-card h3{color:#2d5142}
+.method-stage p,.method-layer p,.method-chron-card p{color:#566f61}
+.method-layer{background:#eff3eb;border-color:#dae5da}
+.method-checklist li{background:var(--ui-surface);color:#4c6657}
+.method-gates li{color:#4b6859}
+.method-quant{background:#ecf2e8;border-inline-start-color:#588c73}
+.method-book,.method-resource{background:var(--ui-surface);border-color:#dce3da}
+/* Dialog: sources and Arabic originals remain prominent */
+.case-dialog{
+  background:#faf9f5;
+  color:var(--ui-ink);
+  border:1px solid #cbdaca;
+  box-shadow:0 26px 100px rgba(13,38,34,.33)
+}
+.case-dialog::backdrop{background:rgba(10,32,30,.71)}
+.case-dialog h2{font-family:var(--ui-serif)}
+.dialog-summary,.dialog-detail p{color:#51675a}
+.original-text{background:#edf1e8}
+.ref-link{background:#dfefe2;color:#27624e}
+/* Arabic is right-to-left; the paired chronological lanes remain paired. */
+html[dir="rtl"]{font-family:"Noto Sans Arabic",Tahoma,"Segoe UI",sans-serif}
+html[dir="rtl"] .hero-copy{padding-inline:clamp(35px,4.4vw,66px) 24px}
+html[dir="rtl"] .hero h1,
+html[dir="rtl"] .section-heading h1,
+html[dir="rtl"] .method-lead h2,
+html[dir="rtl"] .case-dialog h2{
+  font-family:"Noto Naskh Arabic","Amiri",Georgia,serif;
+  letter-spacing:normal;line-height:1.37
+}
+html[dir="rtl"] .chron-quran{border-left:0;border-inline-start:3px solid #3d8469}
+html[dir="rtl"] .chron-hadith{border-left:0;border-inline-start:3px solid #a78a5d}
+html[dir="rtl"] .chron-columns,
+html[dir="rtl"] .chron-period-grid{direction:ltr}
+html[dir="rtl"] .chron-lane{direction:rtl}
+@media(max-width:1160px){
+  .shell{grid-template-columns:219px minmax(0,1fr)}
+  .topbar{padding-inline:28px}
+  #content,.site-footer{padding-inline:28px}
+  .hero-copy{padding-inline-start:39px}
+  html[dir="rtl"] .hero-copy{padding-inline:39px 24px}
+}
+@media(max-width:900px){
+  .toolbar select{max-width:150px}
+  .case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .case-list .case-card:nth-child(3){display:flex}
+  .profile-grid,.quant-grid{grid-template-columns:1fr}
+}
+@media(max-width:780px){
+  .shell{display:block}
+  .sidebar{width:min(270px,83vw);box-shadow:20px 0 65px rgba(6,33,28,.29)}
+  .topbar{min-height:67px;padding:10px 18px}
+  #content{padding:26px 18px 56px}
+  .site-footer{padding:24px 18px}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-copy{padding:38px 29px}
+  html[dir="rtl"] .hero-copy{padding:38px 29px}
+  .hero h1{font-size:clamp(33px,5.5vw,44px)}
+  .hero-art{min-height:150px;border-inline-start:0;border-top:1px solid rgba(255,255,255,.1)}
+  .stats{margin-bottom:29px}
+  .stat{padding:14px 16px}
+  .lower-grid,.method-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .topbar{gap:5px;flex-wrap:wrap}
+  .breadcrumb{font-size:10px}
+  .toolbar{gap:6px;margin-inline-start:auto}
+  .toolbar select{max-width:116px;min-height:36px;padding:8px 5px;font-size:11px}
+  .github-link{display:none}
+  .tradition-label,.language-label{display:none}
+  .hero-copy{padding:30px 23px}
+  html[dir="rtl"] .hero-copy{padding:30px 23px}
+  .hero h1{font-size:32px}
+  .hero p{font-size:13px}
+  .hero-actions{gap:9px}
+  .primary-button,.secondary-button{padding:11px 12px;gap:8px}
+  .hero-art{min-height:125px}
+  .art-center{font-size:73px}
+  .stat strong{font-size:33px}
+  .stat span{font-size:10.5px}
+  .case-grid,.case-list{grid-template-columns:1fr}
+  .case-card{min-height:230px;padding:22px}
+  .panel,.register-card{padding:22px}
+  .section-heading{padding-top:16px}
+  .section-heading h1{font-size:34px}
+  .method-stages,.method-layers,.method-gates,.method-resources{grid-template-columns:1fr}
+  .quant-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .profile-summary{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .chron-timeline{overflow-x:auto;overscroll-behavior-x:contain}
+  .chron-columns,.chron-period-grid{min-width:550px}
+  .case-dialog{width:calc(100vw - 22px);padding:27px 22px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
