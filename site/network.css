@@ -1,0 +1,179 @@
+/* The people and isnad explorer, coordinated with the site's default dark theme. */
+.network-intro {
+  display:flex;align-items:flex-start;gap:19px;
+  margin:20px 0 22px;padding:20px 24px;
+  border:1px solid #3c5753;background:#192d2c;border-radius:12px;
+  color:#c5d8ce;font-size:13px;line-height:1.8
+}
+.network-intro-symbol {font:42px/1 Georgia,serif;color:#d8b77c}
+.network-intro p{max-width:770px}
+.network-note,.network-footnote,.network-legend{font-size:12px;line-height:1.75;color:#a9c1b7;margin-top:16px}
+.network-legend {font-size:11px;color:#c5a977}
+.network-view {
+  padding:24px;
+  background:#152528;
+  border:1px solid #344d4b;
+  border-radius:14px;
+  box-shadow:0 12px 36px rgba(0,0,0,.13);
+  min-width:0
+}
+.network-toolbar {
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px
+}
+.network-modes{
+  display:flex;gap:4px;padding:4px;
+  background:#0e1b1f;
+  border:1px solid #324b48;
+  border-radius:11px;
+  max-width:100%
+}
+.network-modes button{
+  color:#aec5b9;background:transparent;border:1px solid transparent;
+  border-radius:8px;padding:10px 15px;
+  font-size:12px;line-height:1.4;font-weight:700
+}
+.network-modes button[aria-pressed="true"]{
+  color:#f4f0e4;background:#2e5049;
+  border-color:#587568
+}
+.network-modes button:hover:not([aria-pressed="true"]){background:#203739;color:#fff}
+.network-filter{display:flex;align-items:center;gap:9px;color:#bed0c5;font-size:11px}
+.network-filter select{
+  padding:8px 11px;color:#f1f3e8;background:#1b3434;border:1px solid #4b6961;
+  border-radius:8px;max-width:180px;font-size:12px
+}
+.network-meta{
+  display:flex;gap:22px;margin:18px 0 13px;flex-wrap:wrap;
+  color:#a8c0b4;font-size:11px
+}
+.network-meta b{color:#f1d7a7;font-variant-numeric:tabular-nums}
+.network-grid{
+  display:grid;grid-template-columns:minmax(0,1.5fr) minmax(255px,.75fr);
+  min-height:398px;gap:14px;align-items:stretch
+}
+.network-canvas{
+  position:relative;background:
+   radial-gradient(ellipse at center,#203937 0%,#142427 73%);
+  border:1px solid #385552;border-radius:11px;
+  min-width:0;min-height:390px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center
+}
+.network-canvas::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  opacity:.23;background-image:
+  linear-gradient(to right,#44635f 1px,transparent 1px),
+  linear-gradient(to bottom,#44635f 1px,transparent 1px);
+  background-size:40px 40px;
+  mask-image:radial-gradient(ellipse at center,black,transparent 85%)
+}
+.network-svg{width:100%;height:auto;max-height:470px;min-height:280px;position:relative;z-index:1}
+.network-svg g[role="button"]{cursor:pointer;outline:none}
+.network-svg g[role="button"]:focus-visible circle{stroke:#f1c179;stroke-width:5}
+.network-svg g[data-edge]:focus-visible line:last-child{stroke:#ffdfa2;stroke-width:5}
+.network-svg text{font-family:Inter,ui-sans-serif,"Noto Sans Arabic",sans-serif;pointer-events:none}
+.network-empty-overlay{
+  position:absolute;inset-inline:18px;bottom:18px;margin:0;
+  z-index:2;border:1px dashed #4d6c62;background:rgba(13,26,28,.92);
+  padding:13px 16px;border-radius:9px;
+  color:#c3d5ca;line-height:1.6;text-align:center;font-size:12px
+}
+.network-zoom-controls{
+  position:absolute;z-index:3;top:14px;inset-inline-end:14px;
+  display:flex;flex-direction:column;gap:5px
+}
+.network-zoom-controls button{
+  width:35px;height:35px;border:1px solid #50736a;border-radius:8px;
+  background:#1b3835;color:#ebf3e9;font-size:19px
+}
+.network-zoom-controls button:hover{background:#2d5950}
+.network-details{
+  min-width:0;background:#192e30;
+  border:1px solid #38534e;border-radius:11px;
+  padding:22px;overflow-wrap:anywhere;
+  color:#eaf0e8
+}
+.network-details h3{
+  font-family:Georgia,"Noto Naskh Arabic",serif;
+  color:#faf3e3;font-size:23px;line-height:1.36;font-weight:400;margin:0 0 12px
+}
+.network-details h4{
+  color:#e7d2aa;font-size:11px;letter-spacing:.08em;
+  margin:24px 0 9px;text-transform:uppercase
+}
+.network-details p{color:#bfd0c5;font-size:12px;line-height:1.78;margin:10px 0 14px}
+.network-detail-head{color:#dfbf85;font-size:10px;letter-spacing:.06em;margin-bottom:12px}
+.network-review{
+  display:inline-block;padding:7px 10px;
+  color:#e9ce9d!important;background:#3c3327;border-radius:7px
+}
+.network-role{
+  display:grid;gap:7px;padding:12px 0;
+  border-top:1px solid #354d49;
+}
+.network-role b{font-size:13px}
+.network-role small,.network-muted{color:#9eb5a9;font-size:11px}
+.network-source{
+  display:block;width:max-content;max-width:100%;
+  border:1px solid #527265;background:#28463d;color:#c8ebd6;
+  border-radius:7px;padding:8px 11px;margin:7px 0;
+  font-size:12px;line-height:1.55;overflow-wrap:anywhere
+}
+.network-source:hover{background:#3a5c4a}
+.network-dialog{
+  position:fixed;width:min(1210px,calc(100vw - 30px));
+  max-height:min(94vh,1040px);
+  overflow:auto;background:#0f1d20;color:#edf2e9;
+  border:1px solid #4e7063;border-radius:16px;
+  padding:28px;box-shadow:0 35px 130px rgba(0,0,0,.7)
+}
+.network-dialog::backdrop{background:rgba(1,10,12,.85);backdrop-filter:blur(4px)}
+.network-dialog-intro{padding:0 55px 21px 3px}
+.network-dialog-intro span{color:#d7bc87;font-size:10px;letter-spacing:.13em}
+.network-dialog-intro h2{font:400 clamp(25px,3vw,39px)/1.28 Georgia,"Noto Naskh Arabic",serif;margin:12px 0;color:#f8f2e5}
+.network-dialog-intro p{font-size:12px;line-height:1.7;color:#b9ccbf}
+.network-dialog .network-view{box-shadow:none}
+.network-dialog-close{
+  position:sticky;float:inline-end;top:0;z-index:10;
+  width:37px;height:37px;background:#2d4845;color:#f1f5e9;
+  border:1px solid #527568;border-radius:8px;font-size:20px;
+}
+.network-dialog-close:hover{background:#456b5f}
+.network-trigger{
+  background:#26493f;color:#d5eee1;
+  border:1px solid #587969;border-radius:7px;
+  padding:9px 12px;font-size:11px;font-weight:750;
+  display:inline-flex;gap:7px;align-items:center
+}
+.network-trigger:hover{background:#376453;color:#fff}
+.network-chron-action{margin-top:13px}
+.network-overview-action{display:flex;justify-content:flex-end;margin:10px 0 19px}
+html[dir="rtl"] .network-dialog-intro{padding-inline:3px 55px}
+html[dir="rtl"] .network-dialog-intro h2,html[dir="rtl"] .network-details h3{
+  font-family:"Noto Naskh Arabic","Amiri",serif;letter-spacing:normal
+}
+html[dir="rtl"] .network-svg text{font-family:"Noto Sans Arabic",Tahoma,sans-serif}
+@media(max-width:980px){
+ .network-grid{grid-template-columns:1fr}
+ .network-canvas{min-height:360px}
+ .network-details{min-height:160px}
+}
+@media(max-width:600px){
+ .network-view{padding:14px}
+ .network-dialog{padding:15px;width:calc(100vw - 14px);max-height:96vh}
+ .network-dialog-intro{padding-inline:0 45px}
+ .network-toolbar{align-items:stretch;flex-direction:column}
+ .network-modes{width:100%}
+ .network-modes button{flex:1;padding:11px 8px;font-size:11px}
+ .network-filter{justify-content:space-between}
+ .network-canvas{min-height:255px}
+ .network-svg{min-height:245px}
+ .network-details{padding:17px}
+ .network-zoom-controls{top:8px;inset-inline-end:8px}
+ .network-zoom-controls button{width:32px;height:32px}
+ .network-empty-overlay{inset-inline:8px;bottom:8px;padding:9px;font-size:11px}
+ .network-dialog-intro h2{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){
+ .network-svg g{transition:none}
+}

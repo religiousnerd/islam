@@ -15,9 +15,63 @@ def verify(condition, msg):
         raise ValueError(msg)
 
 
+
+def validate_networks(research):
+    """Reject network links lacking identifiable sources or an explicit event."""
+    net = json.loads((ROOT/'site'/'data'/'networks.json').read_text(encoding='utf8'))
+    verify(net.get('schemaVersion') == 1, 'Invalid graph schema')
+    for kind in ('persons','eventRoles','relationships','transmissions','sources'):
+        verify(isinstance(net.get(kind),list), f'Expected list: {kind}')
+        ids = [rec.get('id') for rec in net[kind]]
+        verify(all(isinstance(i,str) and i.strip() for i in ids)
+               and len(set(ids)) == len(ids), f'Duplicate or empty IDs: {kind}')
+    persons = {p['id'] for p in net['persons']}
+    verify('PERSON-MUHAMMAD' in persons
+           and sum(p.get('isResearchSubject') is True for p in net['persons']) == 1,
+           'Missing or duplicate research subject')
+    for person in net['persons']:
+        for field in ('names','notes'):
+            verify(set(person.get(field,{})) == set(LOCALES), f'Incomplete person {field}: {person["id"]}')
+            verify(all(isinstance(person[field][lc],str) and person[field][lc].strip() for lc in LOCALES),
+                   f'Blank person {field}: {person["id"]}')
+    sources = {s['id']:s for s in net['sources']}
+    for source in sources.values():
+        verify(source.get('tradition') in ('sunni','shia','shared'), f'Invalid tradition: {source["id"]}')
+        verify(isinstance(source.get('url'),str) and source['url'].startswith('https://')
+               and bool(source.get('label')), f'Uncited source: {source["id"]}')
+    events = {x['id'] for x in research['cases']} | {x['id'] for x in research['chronology']['quranPassages']}
+    for kind in ('eventRoles','relationships','transmissions'):
+        for link in net[kind]:
+            lid=link['id']
+            verify(link.get('reviewStatus') in ('candidate','reviewed','disputed'), f'Invalid status: {lid}')
+            refs=link.get('sourceIds')
+            verify(isinstance(refs,list) and len(refs)>0 and len(refs)==len(set(refs))
+                   and all(ref in sources for ref in refs), f'Missing exact citations: {lid}')
+            verify(set(link.get('labels',{})) == set(LOCALES)
+                   and all(isinstance(link['labels'][lc],str) and link['labels'][lc].strip() for lc in LOCALES),
+                   f'Missing localized link labels: {lid}')
+            if link['reviewStatus']=='reviewed':
+                verify(all(link.get(k) for k in ('reviewedBy','reviewedAt','reviewRationale')),
+                       f'Reviewed link missing review metadata: {lid}')
+            if kind=='eventRoles':
+                verify(link.get('personId') in persons and link.get('eventId') in events,
+                       f'Invalid event role: {lid}')
+            elif kind=='relationships':
+                verify(link.get('personAId') in persons and link.get('personBId') in persons
+                       and link['personAId']!=link['personBId'], f'Invalid relationship: {lid}')
+                verify(isinstance(link.get('eventIds'),list) and
+                       all(e in events for e in link['eventIds']), f'Invalid relationship event IDs: {lid}')
+            else:
+                verify(link.get('fromPersonId') in persons and link.get('toPersonId') in persons
+                       and link['fromPersonId']!=link['toPersonId'] and link.get('eventId') in events,
+                       f'Invalid isnad edge: {lid}')
+    print(f'OK: {len(persons)} persons, {len(net["relationships"])} ties, '
+          f'{len(net["transmissions"])} transmission edges.')
+
 def main():
     data = json.loads(RESEARCH.read_text(encoding='utf8'))
     verify(data['schemaVersion'] == 2, 'Unexpected schema version')
+    validate_networks(data)
     verify(sum(c['tradition']=='sunni' for c in data['collections']) == 6, 'Expected six Sunni hadith collections')
     verify(sum(c['tradition']=='shia' for c in data['collections']) == 4, 'Expected four Twelver Shiʿi collections')
     verify(sum(c['tradition']=='shared' for c in data['collections']) == 1, 'Expected shared Qurʾan source')

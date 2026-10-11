@@ -21,6 +21,10 @@ Religious authority, infallibility or divine will are not historical explanation
 - [Quantitative model](docs/quantitative-model.md)
 - [Behavioural and psychological-profile safeguards](docs/behavioral-profile.md)
 
+## Interactive relationship networks
+
+Each source-based chronology record can open an **Explore network** dialog. The **People & networks** section includes historical associations and a distinct isnād/transmission view, with source-provenance filters, confidence/review state, clickable persons and links, detail cards, and zoom. The implementation is a self-contained SVG visualization on GitHub Pages. **No unreviewed associates, event participants or isnād chains are fabricated**: initially only the research subject is shown, with empty verified-link states. See [relationship network protocol](docs/relationship-network.md); graph publication records live in `site/data/networks.json` and are validated on deployment.
+
 ## Source and language filters
 
 The tradition filter is **Both / Sunni / Twelver Shiʿi**. It identifies the provenance of sources, **not** the universal acceptance of reports by all adherents. The Qurʾan is shared; different hadith corpora are not conflated. The profile, cases and references follow this filter. The relative-time display labels sequence **undetermined** whenever chronology is not independently justified; conventional surah or compilation order cannot establish precedence.
@@ -34,6 +38,9 @@ A static HTML/CSS/JavaScript interface is deployed from `site/` via GitHub Actio
 ```text
 .github/workflows/pages.yml     Validation and automatic Pages deployment
 site/index.html                 Browser application
+site/network.js                  Event relationships and isnād SVG graph
+site/network.css                 Graph controls, dark theme and RTL
+site/data/networks.json          Source-aware people and graph publication records
 site/styles.css                 Core responsive UI, including Arabic RTL
 site/design-refresh.css         Editorial layout and responsive refinements
 site/dark-mode.css              Default full dark visual theme, including RTL

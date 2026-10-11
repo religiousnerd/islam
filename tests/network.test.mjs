@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { runInNewContext } from 'node:vm';
+const root = new URL('../site/', import.meta.url);
+const network = JSON.parse(readFileSync(new URL('data/networks.json',root),'utf8'));
+const sandbox={window:{}};
+runInNewContext(readFileSync(new URL('network.js',root),'utf8'),sandbox);
+const viewer=sandbox.window.NetworkExplorer;
+assert.ok(viewer,'Network explorer module is loadable');
+const languages=['cs','en','ar','id'];
+assert.deepEqual(Object.keys(viewer.translations).sort(),languages.slice().sort());
+const keys=Object.keys(viewer.translations.en).sort();
+for(const lang of languages){
+  assert.deepEqual(Object.keys(viewer.translations[lang]).sort(),keys,`Missing ${lang} graph translations`);
+  assert.ok(viewer.t(lang,'explore').length>5);
+  assert.ok(viewer.pageMarkup(lang).includes('peopleNetworkApp'));
+}
+assert.equal(network.schemaVersion,1);
+assert.ok(network.persons.some(x=>x.isResearchSubject));
+assert.deepEqual(network.relationships,[],'No unverified relationship seeds');
+assert.deepEqual(network.transmissions,[],'No unverified chain seeds');
+const app=readFileSync(new URL('app.js',root),'utf8');
+assert.match(app,/\['people', 'navPeople'/);
+assert.match(app,/data-open-network/);
+assert.match(app,/NetworkExplorer\.openEvent/);
+assert.match(app,/NetworkExplorer\.mountPage/);
+const html=readFileSync(new URL('index.html',root),'utf8');
+assert.match(html,/network\.js/);
+assert.match(html,/network\.css/);
+assert.match(html,/id="networkDialog"/);
+console.log('OK: event-network entrypoints, source-aware empty dataset, four graph locales');

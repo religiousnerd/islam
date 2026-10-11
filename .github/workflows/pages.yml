@@ -25,6 +25,7 @@ jobs:
           python3 scripts/validate.py
           python3 -m unittest discover -s tests -v
           node tests/locale.test.mjs
+          node tests/network.test.mjs
       - name: Check reproducible SQLite exports
         run: |
           python3 scripts/export_metrics.py
@@ -33,6 +34,7 @@ jobs:
         run: |
           node --check site/i18n.js
           node --check site/app.js
+          node --check site/network.js
 
   deploy:
     if: github.event_name != 'pull_request'

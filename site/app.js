@@ -5,6 +5,7 @@
     ['cases', 'navCases', '◫'],
     ['tensions', 'navTensions', '⧉'],
     ['chronology', 'navChronology', '↔'],
+    ['people', 'navPeople', '◎'],
     ['profile', 'navProfile', '◉'],
     ['quantitative', 'navQuant', '◉'],
     ['sources', 'navSources', '▤'],
@@ -22,10 +23,11 @@
   let timelineTopic = 'all';
   let db;
   let metrics;
+  let networkData;
   let section = 'overview';
   let query = '';
   let topic = 'all';
-  const t = key => window.I18N[lang][key] ?? window.I18N.en[key] ?? key;
+  const t = key => window.I18N[lang][key] ?? window.NetworkExplorer?.t(lang,key) ?? window.I18N.en[key] ?? key;
   const local = obj => obj.translations?.[lang] ?? obj.translations?.en ?? {};
   const visibleCase = item => tradition === 'both' || item.refs.some(ref => ref.tradition === tradition || ref.tradition === 'shared');
   const visibleRefs = item => tradition === 'both' ? item.refs : item.refs.filter(ref => ref.tradition === tradition || ref.tradition === 'shared');
@@ -56,7 +58,7 @@
        <div class="stat"><strong>${visibleCollections().length}</strong><span>${html(t('primarySources'))}</span></div><div class="stat"><strong>${visibleCases().length}</strong><span>${html(t('caseCount'))}</span></div><div class="stat"><strong>${visibleTensions().length}</strong><span>${html(t('tensionCount'))}</span></div><div class="stat"><strong>4</strong><span>${html(t('languages'))}</span></div>
       </section>
       <div class="content-section"><div class="section-titleline"><div><div class="micro-label">${html(t('navCases'))}</div><h2>${html(t('studiesTitle'))}</h2><p>${html(t('studiesDesc'))}</p></div><a class="text-link" href="#cases">${html(t('viewAll'))} →</a></div><div class="case-grid">${topCards || `<p class="empty">${html(t('sectNoCases'))}</p>`}</div></div>
-      <div class="lower-grid"><section class="panel timeline-panel"><div class="micro-label">570 — 632 CE</div><h2>${html(t('timelineTitle'))}</h2><p>${html(t('timelineSub'))}</p><div class="timeline">${[['c. 570','birth'],['c. 610','revelation'],['622','hijra'],['632','death']].map(([year,key])=>`<div class="timeline-row"><b dir="ltr">${html(year)}</b><span>${html(t(key))}</span></div>`).join('')}</div></section>
+      <div class="lower-grid"><section class="panel timeline-panel"><div class="micro-label">570 — 632 CE</div><h2>${html(t('timelineTitle'))}</h2><p>${html(t('timelineSub'))}</p><div class="timeline">${[['c. 570','birth'],['c. 610','revelation'],['622','hijra'],['632','death']].map(([year,key])=>`<div class="timeline-row"><b dir="ltr">${html(year)}</b><span>${html(t(key))}</span>${key==="hijra"?'<button type="button" class="network-trigger" data-open-network="milestone-hijra">◎ '+html(t("explore"))+'</button>':""}</div>`).join('')}</div></section>
        <section class="panel tension-panel"><div class="micro-label">${html(t('unresolved'))}</div><h2>${html(t('tensionTitle'))}</h2><p>${html(t('tensionDesc'))}</p><div class="tension-box"><span class="tension-symbol">${firstTension ? '≠ ?' : '○'}</span><h3>${html((firstTension ? local(firstTension).title : t('sectNoTensions')))}</h3><p>${html((firstTension ? local(firstTension).summary : t('sectNoTensions')))}</p><a class="text-link" href="#tensions">${html(t('openRegister'))} →</a></div></section></div>
       <aside class="principle"><div class="principle-icon">“</div><div><h3>${html(t('guidelineTitle'))}</h3><p>${html(t('guidelineText'))}</p></div></aside>`;
   }
@@ -151,12 +153,15 @@
     if (dbb.endYear<da.startYear) return 'after';
     return 'undetermined';
   }
+  function peoplePage() {
+    return window.NetworkExplorer.pageMarkup(lang);
+  }
   function chronologyPage() {
     const quran = db.chronology.quranPassages.filter(x=>timelineTopic==='all'||x.theme===timelineTopic);
     const reports = visibleCases().filter(x=>timelineTopic==='all'||x.theme===timelineTopic);
     const dateLabel = node => node.chronology?.period==='medinan'?t('chronBroadMedinan'):t('chronUndatedLabel');
-    const qCard = q => `<article class="chron-card chron-quran"><div class="chron-card-top"><span class="chron-reference">${html(q.reference)}</span><span class="chron-period">${html(dateLabel(q))}</span></div><h3>${html(local(q).title)}</h3><p>${html(local(q).summary)}</p><blockquote lang="ar" dir="rtl">${html(q.arabicExcerpt)}</blockquote><p class="chron-caveat">${html(t('chronVerseCaveat'))}</p>${link(q.url,t('openSource'),'text-link')}</article>`;
-    const hCard = c => `<article class="chron-card chron-hadith"><div class="chron-card-top"><span class="chron-reference">${html(c.id)}</span><span class="chron-period">${html(dateLabel(c))}</span></div><h3>${html(local(c).title)}</h3><p>${html(local(c).summary)}</p><blockquote lang="ar" dir="rtl">${html(c.arabicExcerpt)}</blockquote><p class="chron-caveat">${html(t('chronHadithCaveat'))}</p><div class="chron-actions">${refLinks(visibleRefs(c))}<button type="button" class="inline-button" data-open-case="${html(c.id)}">${html(t('readCase'))} →</button></div></article>`;
+    const qCard = q => `<article class="chron-card chron-quran"><div class="chron-card-top"><span class="chron-reference">${html(q.reference)}</span><span class="chron-period">${html(dateLabel(q))}</span></div><h3>${html(local(q).title)}</h3><p>${html(local(q).summary)}</p><blockquote lang="ar" dir="rtl">${html(q.arabicExcerpt)}</blockquote><p class="chron-caveat">${html(t('chronVerseCaveat'))}</p>${link(q.url,t('openSource'),'text-link')}<div class="network-chron-action"><button type="button" class="network-trigger" data-open-network="${html(q.id)}">◎ ${html(t('explore'))}</button></div></article>`;
+    const hCard = c => `<article class="chron-card chron-hadith"><div class="chron-card-top"><span class="chron-reference">${html(c.id)}</span><span class="chron-period">${html(dateLabel(c))}</span></div><h3>${html(local(c).title)}</h3><p>${html(local(c).summary)}</p><blockquote lang="ar" dir="rtl">${html(c.arabicExcerpt)}</blockquote><p class="chron-caveat">${html(t('chronHadithCaveat'))}</p><div class="chron-actions">${refLinks(visibleRefs(c))}<button type="button" class="network-trigger" data-open-network="${html(c.id)}">◎ ${html(t('explore'))}</button><button type="button" class="inline-button" data-open-case="${html(c.id)}">${html(t('readCase'))} →</button></div></article>`;
     const qMedinan=quran.filter(q=>q.chronology.period==='medinan');
     const qUnknown=quran.filter(q=>q.chronology.period!=='medinan');
     const knownHadith=reports.filter(r=>r.chronology?.status==='independently_dated' && r.chronology?.period==='medinan');
@@ -169,6 +174,7 @@
       return `<div class="chron-comparison"><span><b>${html(q.reference)}</b> ↔ <b>${html(h.id)}</b></span><span class="chron-order">${html(t(order==='undetermined'?'chronOrderUnknown':order==='before'?'chronOrderBefore':'chronOrderAfter'))}</span></div>`;
     }).join('');
     return `${sectionHeading('chronEyebrow','chronTitle','chronIntro')}
+      <div class="network-overview-action"><a href="#people" class="network-trigger">◎ ${html(t('navPeople'))} →</a></div>
       <div class="chron-notice" role="note"><strong>${html(t('chronMethodTitle'))}</strong><p>${html(t('chronMethodDesc'))}</p></div>
       <div class="filters"><label for="chronTopic">${html(t('chronFilter'))}</label><select id="chronTopic">${[['all','allTopics'],['warfare','topicWarfare'],['mercy','topicMercy'],['leadership','topicLeadership']].map(([value,key])=>`<option value="${value}" ${timelineTopic===value?'selected':''}>${html(t(key))}</option>`).join('')}</select></div>
       <div class="chron-timeline"><div class="chron-columns"><strong>${html(t('chronQuran'))}</strong><strong>${html(t('chronHadith'))}</strong></div>
@@ -228,8 +234,11 @@
     document.querySelectorAll('[data-i18n]').forEach(node=>{node.textContent=t(node.dataset.i18n);});
     el('footerNote').textContent = t('footer');
     nav();
-    const markup = {overview,cases:casesPage,tensions:tensionsPage,chronology:chronologyPage,profile:profilePage,quantitative:quantitativePage,sources:sourcesPage,method:methodPage}[section]();
+    const markup = {overview,cases:casesPage,tensions:tensionsPage,chronology:chronologyPage,people:peoplePage,profile:profilePage,quantitative:quantitativePage,sources:sourcesPage,method:methodPage}[section]();
     el('content').innerHTML = markup;
+    const networkCtx = {catalog:networkData,research:db,lang,tradition};
+    if(section==='people') window.NetworkExplorer.mountPage(el('peopleNetworkApp'),networkCtx);
+    document.querySelectorAll('[data-open-network]').forEach(button=>button.addEventListener('click',()=>window.NetworkExplorer.openEvent(button.dataset.openNetwork,networkCtx)));
     document.querySelectorAll('[data-open-case]').forEach(button=>button.addEventListener('click',()=>openCase(button.dataset.openCase)));
     el('caseSearch')?.addEventListener('input',event=>{const pos=event.target.selectionStart;query=event.target.value;render();const input=el('caseSearch');input.focus();try{input.setSelectionRange(pos,pos)}catch{}});
     el('topicFilter')?.addEventListener('change',event=>{topic=event.target.value;render()});
@@ -256,12 +265,14 @@
   el('mobileMenu').addEventListener('click',()=>document.body.classList.toggle('menu-open'));
   window.addEventListener('hashchange',route);
   document.addEventListener('keydown',event=>{ if(event.key==='Escape'){const d=el('caseDialog');if(d.open)d.close()} });
-  Promise.all(['./data/research.json','./data/quantitative.json'].map(url=>
+  Promise.all(['./data/research.json','./data/quantitative.json','./data/networks.json'].map(url=>
     fetch(url).then(r=>{if(!r.ok)throw Error(`${url}: HTTP ${r.status}`);return r.json()})
-  )).then(([research,quantitative])=>{
+  )).then(([research,quantitative,networks])=>{
     if (!Array.isArray(research.cases) || !Array.isArray(research.tensions) || !quantitative.counts) throw Error('Invalid data schema');
     db=research;
     metrics=quantitative;
+    if(networks.schemaVersion!==1 || !Array.isArray(networks.persons) || !Array.isArray(networks.relationships) || !Array.isArray(networks.transmissions)) throw Error('Invalid network schema');
+    networkData=networks;
     route();
   }).catch(error=>{
     console.error(error);

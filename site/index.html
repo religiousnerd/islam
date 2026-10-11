@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./design-refresh.css">
   <link rel="stylesheet" href="./dark-mode.css">
+  <link rel="stylesheet" href="./network.css">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <script src="./i18n.js" defer></script>
+  <script src="./network.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
@@ -32,6 +34,7 @@
     </div>
   </div>
   <dialog id="caseDialog" class="case-dialog" aria-labelledby="dialogTitle"><div id="dialogBody"></div><form method="dialog"><button class="dialog-close" aria-label="Close">✕</button></form></dialog>
+  <dialog id="networkDialog" class="network-dialog" aria-labelledby="networkDialogTitle"><form method="dialog"><button class="network-dialog-close" aria-label="Close">✕</button></form><div id="networkDialogBody"></div></dialog>
   <noscript><div class="noscript">This dashboard requires JavaScript. / Tento dashboard vyžaduje JavaScript.</div></noscript>
 </body>
 </html>

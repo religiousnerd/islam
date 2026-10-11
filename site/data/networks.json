@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "editorialNotice": "Only source-cited roles and links may be published. Narrators are not presumed event participants; a textual mention is not proof of a historical relationship.",
+  "persons": [
+    {
+      "id": "PERSON-MUHAMMAD",
+      "isResearchSubject": true,
+      "names": {
+        "cs": "Muhammad",
+        "en": "Muhammad",
+        "ar": "محمد",
+        "id": "Muhammad"
+      },
+      "notes": {
+        "cs": "Ústřední zkoumaná osoba; záznam netvrdí účast na žádné dosud neposouzené události.",
+        "en": "Central research subject; this entry asserts no participation in an unreviewed event.",
+        "ar": "الشخصية موضوع البحث؛ لا يثبت هذا السجل مشاركة في حدث لم يخضع للمراجعة.",
+        "id": "Subjek utama penelitian; catatan ini tidak menyatakan keterlibatan dalam peristiwa yang belum ditinjau."
+      }
+    }
+  ],
+  "eventRoles": [],
+  "relationships": [],
+  "transmissions": [],
+  "sources": []
+}
