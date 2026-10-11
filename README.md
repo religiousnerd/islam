@@ -35,7 +35,8 @@ A static HTML/CSS/JavaScript interface is deployed from `site/` via GitHub Actio
 .github/workflows/pages.yml     Validation and automatic Pages deployment
 site/index.html                 Browser application
 site/styles.css                 Core responsive UI, including Arabic RTL
-site/design-refresh.css         Editorial visual system and mobile refinements
+site/design-refresh.css         Editorial layout and responsive refinements
+site/dark-mode.css              Default full dark visual theme, including RTL
 site/app.js                     Navigation, methodology, timeline and filters
 site/i18n.js                    Four complete translation dictionaries
 site/data/research.json         Curated multilingual editorial catalog (no pilot cases)
